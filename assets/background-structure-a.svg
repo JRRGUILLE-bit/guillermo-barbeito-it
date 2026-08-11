@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" fill="none">
+  <g stroke="#DCE3E8" stroke-width="1">
+    <path d="M92 214H430V362H782" stroke-opacity=".10"/>
+    <path d="M230 86V520H532V704H948" stroke-opacity=".075"/>
+    <path d="M684 168H1098V336H1442" stroke-opacity=".08"/>
+    <path d="M1024 410V742H1312V998" stroke-opacity=".075"/>
+    <path d="M82 894H376V1052H690" stroke-opacity=".08"/>
+    <path d="M840 998H1188V874H1518" stroke-opacity=".09"/>
+  </g>
+
+  <g stroke="#70D8BD" stroke-width="1">
+    <path d="M230 300V520H532" stroke-opacity=".26"/>
+    <path d="M92 214H230" stroke-opacity=".22"/>
+    <rect x="524.5" y="512.5" width="15" height="15" stroke-opacity=".35"/>
+    <circle cx="230" cy="300" r="4" fill="#70D8BD" fill-opacity=".68" stroke="none"/>
+    <circle cx="230" cy="300" r="10" stroke-opacity=".10"/>
+  </g>
+
+  <g stroke="#6DA8D8" stroke-width="1">
+    <path d="M782 362H1128V578H1420" stroke-opacity=".20"/>
+    <rect x="1121.5" y="570.5" width="15" height="15" stroke-opacity=".34"/>
+    <circle cx="782" cy="362" r="3" fill="#6DA8D8" fill-opacity=".65" stroke="none"/>
+  </g>
+
+  <g stroke="#EF5147" stroke-width="1">
+    <path d="M1188 874H1360V1036" stroke-opacity=".22"/>
+    <circle cx="1360" cy="874" r="4" fill="#EF5147" fill-opacity=".66" stroke="none"/>
+    <circle cx="1360" cy="874" r="11" stroke-opacity=".08"/>
+  </g>
+
+  <g stroke="#DCE3E8" stroke-opacity=".16" stroke-width="1">
+    <path d="M150 150v32M134 166h32"/>
+    <path d="M934 118v34M917 135h34"/>
+    <path d="M1452 464v34M1435 481h34"/>
+    <path d="M388 970v34M371 987h34"/>
+    <path d="M1008 890v34M991 907h34"/>
+  </g>
+
+  <g fill="#9EA3AA" fill-opacity=".22" font-family="monospace" font-size="14" letter-spacing="2">
+    <text x="92" y="190">34.9011° S</text>
+    <text x="92" y="208">56.1645° W</text>
+    <text x="452" y="340">01A</text>
+    <text x="452" y="360">01B</text>
+    <text x="452" y="380">01C</text>
+    <text x="1138" y="550">02A / ROUTE</text>
+    <text x="1036" y="728">SYS / VERIFY</text>
+    <text x="1378" y="1018">04 / SIGNAL</text>
+  </g>
+
+  <g fill="#9EA3AA" fill-opacity=".11">
+    <circle cx="610" cy="566" r="1.5"/><circle cx="632" cy="566" r="1.5"/><circle cx="654" cy="566" r="1.5"/><circle cx="676" cy="566" r="1.5"/><circle cx="698" cy="566" r="1.5"/>
+    <circle cx="610" cy="588" r="1.5"/><circle cx="632" cy="588" r="1.5"/><circle cx="654" cy="588" r="1.5"/><circle cx="676" cy="588" r="1.5"/><circle cx="698" cy="588" r="1.5"/>
+    <circle cx="610" cy="610" r="1.5"/><circle cx="632" cy="610" r="1.5"/><circle cx="654" cy="610" r="1.5"/><circle cx="676" cy="610" r="1.5"/><circle cx="698" cy="610" r="1.5"/>
+  </g>
+</svg>

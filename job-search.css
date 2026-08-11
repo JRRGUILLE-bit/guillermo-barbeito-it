@@ -1213,3 +1213,212 @@
     border-bottom: 1px solid rgba(241,237,228,.08);
   }
 }
+
+/* STEP 06 — PROJECT VISUAL SYSTEM
+   Turn the landing projects into technical diagrams first, prose second. */
+.project-feature {
+  grid-template-columns: 1fr 1.08fr;
+  border-color: rgba(241,237,228,.13);
+  background: linear-gradient(145deg, rgba(18,22,28,.82), rgba(10,12,15,.94));
+  box-shadow: 0 34px 90px rgba(0,0,0,.16);
+}
+
+.project-diagram-menelao {
+  min-height: 600px;
+  border-right-color: rgba(241,237,228,.08);
+  background:
+    linear-gradient(rgba(112,216,189,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112,216,189,.025) 1px, transparent 1px),
+    radial-gradient(circle at 50% 48%, rgba(112,216,189,.105), transparent 20rem),
+    linear-gradient(150deg, #0d1217, #090b0e);
+  background-size: 52px 52px, 52px 52px, auto, auto;
+}
+
+.project-diagram-menelao::before {
+  content: "VERIFICATION MODEL / X-A-B";
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  color: rgba(158,163,170,.5);
+  font: 700 .56rem/1 var(--mono);
+  letter-spacing: .12em;
+}
+
+.project-diagram-menelao .storage {
+  width: 118px;
+  border-color: rgba(241,237,228,.16);
+  background: rgba(8,11,14,.9);
+  box-shadow: 0 16px 34px rgba(0,0,0,.18);
+}
+
+.project-diagram-menelao .storage-a {
+  top: 18%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  border-color: rgba(241,237,228,.3);
+}
+
+.project-diagram-menelao .storage-b {
+  top: auto;
+  bottom: 20%;
+  left: 12%;
+  right: auto;
+  border-color: rgba(109,168,216,.5);
+}
+
+.project-diagram-menelao .storage-c {
+  bottom: 20%;
+  left: auto;
+  right: 12%;
+  border-color: rgba(112,216,189,.5);
+}
+
+.project-diagram-menelao .storage-d {
+  top: 47%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+  color: var(--signal);
+  border-color: rgba(112,216,189,.58);
+  background: rgba(9,13,15,.95);
+}
+
+.project-diagram-menelao .flow {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(112,216,189,.64), transparent);
+}
+
+.project-diagram-menelao .flow-1 {
+  width: 1px;
+  height: 29%;
+  top: 28%;
+  left: 50%;
+  background: linear-gradient(transparent, rgba(112,216,189,.68), transparent);
+}
+
+.project-diagram-menelao .flow-2 {
+  width: 41%;
+  top: 57%;
+  left: 49.5%;
+  transform: rotate(143deg);
+}
+
+.project-diagram-menelao .flow-3 {
+  width: 41%;
+  top: 57%;
+  left: 50.5%;
+  transform: rotate(37deg);
+}
+
+.project-diagram-menelao .diagram-caption {
+  right: 1.3rem;
+  bottom: 1.2rem;
+  color: var(--signal);
+  font-size: .58rem;
+  letter-spacing: .13em;
+}
+
+.project-copy {
+  padding: clamp(2.5rem, 5vw, 5.2rem);
+}
+
+.project-copy h3 {
+  font-size: clamp(2.8rem, 5.1vw, 5.2rem);
+}
+
+.hiring-project-grid .project-card {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  padding: 1.4rem 1.4rem 1.3rem;
+  border-color: rgba(241,237,228,.09);
+  background: linear-gradient(155deg, rgba(17,21,27,.72), rgba(9,11,14,.92));
+}
+
+.hiring-project-grid .project-card::before {
+  position: absolute;
+  top: 4rem;
+  left: 1.4rem;
+  right: 1.4rem;
+  color: rgba(241,237,228,.55);
+  font: 700 .56rem/1.45 var(--mono);
+  letter-spacing: .085em;
+}
+
+.hiring-project-grid .project-card::after {
+  content: "";
+  position: absolute;
+  top: 5.7rem;
+  left: 1.4rem;
+  right: 1.4rem;
+  height: 1px;
+  opacity: .5;
+}
+
+.hiring-project-grid .project-card:nth-child(1)::before {
+  content: "BROWSER  →  SESSION STATE  →  AUTH  →  SYNC";
+}
+.hiring-project-grid .project-card:nth-child(1)::after {
+  background: linear-gradient(90deg, var(--blue), rgba(109,168,216,.15) 33%, var(--signal) 66%, rgba(112,216,189,.18));
+}
+
+.hiring-project-grid .project-card:nth-child(2)::before {
+  content: "WEATHER + MOBILITY + DOCS  →  OPS HUB";
+}
+.hiring-project-grid .project-card:nth-child(2)::after {
+  background: linear-gradient(90deg, var(--signal), rgba(112,216,189,.15) 52%, var(--accent-bright));
+}
+
+.hiring-project-grid .project-card:nth-child(3)::before {
+  content: "APP / DATA  →  BACKUP  →  RECOVERY";
+}
+.hiring-project-grid .project-card:nth-child(3)::after {
+  background: linear-gradient(90deg, rgba(241,237,228,.42), rgba(109,168,216,.18), var(--blue));
+}
+
+.hiring-project-grid .project-card h3 {
+  margin: 6.2rem 0 1rem;
+  font-size: clamp(1.7rem, 2.45vw, 2.55rem);
+}
+
+.hiring-project-grid .project-card p {
+  line-height: 1.65;
+}
+
+.hiring-project-grid .project-card .card-footer {
+  color: rgba(241,237,228,.46);
+  font-size: .57rem;
+}
+
+.hiring-project-grid .project-card:nth-child(1) .card-top span:last-child { color: var(--blue); }
+.hiring-project-grid .project-card:nth-child(2) .card-top span:last-child { color: var(--signal); }
+.hiring-project-grid .project-card:nth-child(3) .card-top span:last-child { color: rgba(241,237,228,.62); }
+
+@media (max-width: 1120px) {
+  .project-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .project-diagram-menelao {
+    min-height: 500px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(241,237,228,.08);
+  }
+}
+
+@media (max-width: 620px) {
+  .project-diagram-menelao {
+    min-height: 390px;
+  }
+
+  .project-diagram-menelao .storage {
+    width: 94px;
+  }
+
+  .hiring-project-grid .project-card::before {
+    font-size: .5rem;
+    letter-spacing: .045em;
+  }
+}

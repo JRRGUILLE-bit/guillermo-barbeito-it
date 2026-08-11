@@ -1,0 +1,153 @@
+/* HERO PANEL V4 — denser information + restrained process animation.
+   Loaded after hero-panel.css and scoped only to the right-hand hero panel. */
+
+.is-personalized .hero-system {
+  min-height: 470px;
+}
+
+.is-personalized .system-map {
+  min-height: 382px;
+  padding-top: 2.85rem;
+  grid-template-rows: repeat(4, minmax(58px, 1fr)) 3.45rem;
+}
+
+/* Slightly stronger action text: still secondary, but actually readable. */
+.is-personalized .system-map .node small {
+  color: rgba(204,205,202,.68);
+  font-size: .65rem;
+}
+
+/* Add one evidence-oriented microline to each stage without changing markup. */
+.is-personalized .system-map .node strong {
+  display: block;
+  line-height: 1.05;
+}
+
+.is-personalized .system-map .node strong::after {
+  display: block;
+  margin-top: .42rem;
+  color: rgba(158,163,170,.46);
+  font: 700 .49rem/1.2 var(--mono);
+  letter-spacing: .08em;
+}
+
+.is-personalized .system-map .node-a strong::after {
+  content: "INCIDENTS  /  USERS  /  TROUBLESHOOTING";
+}
+
+.is-personalized .system-map .node-b strong::after {
+  content: "CONTEXT  /  PRIORITY  /  FOLLOW-THROUGH";
+}
+
+.is-personalized .system-map .node-c strong::after {
+  content: "CONFIG  /  BACKUPS  /  RECOVERY";
+}
+
+.is-personalized .system-map .node-d strong::after {
+  content: "SCRIPTS  /  CHECKS  /  DOCUMENTATION";
+}
+
+/* Per-stage accent variables power both the pulse and the row pass. */
+.is-personalized .system-map .node-a { --stage-rgb: 112,216,189; }
+.is-personalized .system-map .node-b { --stage-rgb: 109,168,216; }
+.is-personalized .system-map .node-c { --stage-rgb: 210,207,199; }
+.is-personalized .system-map .node-d { --stage-rgb: 218,59,50; }
+
+/* A small illuminated segment travels down the process rail. */
+.is-personalized .system-map::after {
+  background:
+    linear-gradient(to bottom,
+      rgba(112,216,189,.42),
+      rgba(109,168,216,.24) 34%,
+      rgba(241,237,228,.16) 67%,
+      rgba(218,59,50,.34)),
+    linear-gradient(to bottom,
+      transparent 0,
+      transparent 24%,
+      rgba(241,237,228,.15) 38%,
+      rgba(112,216,189,.95) 50%,
+      rgba(241,237,228,.16) 62%,
+      transparent 76%,
+      transparent 100%);
+  background-size: 100% 100%, 100% 78px;
+  background-repeat: no-repeat;
+  background-position: 0 0, 0 -90px;
+  animation: gb-rail-scan 8s linear infinite;
+}
+
+/* Each row wakes as the scan reaches it. */
+.is-personalized .system-map .node {
+  animation: gb-row-pass 8s ease-in-out infinite;
+}
+
+.is-personalized .system-map .node-b { animation-delay: 2s; }
+.is-personalized .system-map .node-c { animation-delay: 4s; }
+.is-personalized .system-map .node-d { animation-delay: 6s; }
+
+/* Keep the point pulse synchronized with the slower scan. */
+.is-personalized .system-map .node::before {
+  animation-duration: 8s;
+}
+.is-personalized .system-map .node-b::before { animation-delay: 2s; }
+.is-personalized .system-map .node-c::before { animation-delay: 4s; }
+.is-personalized .system-map .node-d::before { animation-delay: 6s; }
+
+/* The ONLINE light breathes, but never flashes. */
+.is-personalized .system-state i {
+  animation: gb-online-breathe 3.4s ease-in-out infinite;
+}
+
+@keyframes gb-rail-scan {
+  from { background-position: 0 0, 0 -90px; }
+  to   { background-position: 0 0, 0 430px; }
+}
+
+@keyframes gb-row-pass {
+  0%, 18%, 100% {
+    background: transparent;
+    box-shadow: none;
+  }
+  5% {
+    background: linear-gradient(90deg, rgba(var(--stage-rgb),.07), transparent 62%);
+    box-shadow: inset 2px 0 0 rgba(var(--stage-rgb),.42);
+  }
+  11% {
+    background: linear-gradient(90deg, rgba(var(--stage-rgb),.025), transparent 68%);
+    box-shadow: inset 2px 0 0 rgba(var(--stage-rgb),.16);
+  }
+}
+
+@keyframes gb-online-breathe {
+  0%, 100% { opacity: .72; box-shadow: 0 0 6px rgba(112,216,189,.28); }
+  50% { opacity: 1; box-shadow: 0 0 13px rgba(112,216,189,.58); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-personalized .system-map::after,
+  .is-personalized .system-map .node,
+  .is-personalized .system-map .node::before,
+  .is-personalized .system-state i {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .is-personalized .hero-system {
+    min-height: 485px;
+  }
+
+  .is-personalized .system-map {
+    min-height: 395px;
+    grid-template-rows: repeat(4, minmax(66px, 1fr)) 3.6rem;
+  }
+
+  .is-personalized .system-map .node strong::after {
+    margin-top: .32rem;
+    font-size: .45rem;
+    letter-spacing: .055em;
+  }
+
+  .is-personalized .system-map .node small {
+    font-size: .57rem;
+  }
+}

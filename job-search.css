@@ -110,6 +110,13 @@
   margin-top: auto;
 }
 
+/* El portfolio audiovisual sigue asociado en datos estructurados, pero no compite
+   con la conversión del recruiter dentro de esta landing IT. */
+.contact-line-muted,
+.site-footer .footer-link {
+  display: none;
+}
+
 @media (max-width: 1120px) {
   .area-grid-hiring {
     grid-template-columns: 1fr 1fr;

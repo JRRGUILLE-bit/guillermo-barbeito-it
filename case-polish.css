@@ -949,3 +949,12 @@
     transform: none;
   }
 }
+
+/* Multiline diagram labels: terminate CSS hex escapes explicitly. */
+.case-page.case-foundry .case-header-inner::after {
+  content: "BROWSER / UI\A ↓\A SESSION STATE\A ↓\A AUTH / FAIL-CLOSED\A ↓\A APPS SCRIPT / SHEETS\A \A TTL · LOCKING · QA";
+}
+
+.case-page.case-jona .case-header-inner::after {
+  content: "WEATHER        MOBILITY\A ↘             ↙\A OPS HUB\A ↗             ↖\A DOCUMENTS       TOOLS\A \A CLOSEOUT / PRIVACY";
+}

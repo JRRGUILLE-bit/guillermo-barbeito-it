@@ -620,3 +620,192 @@
     font-size: 2rem;
   }
 }
+
+/* STEP 02 — LANDING PAGE RHYTHM
+   Alternate density, surface and scale so the page reads as one editorial system. */
+.profile,
+.areas-section,
+.experience-section,
+.projects-section,
+.stack-section,
+.contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.profile > *,
+.areas-section > *,
+.experience-section > *,
+.projects-section > *,
+.stack-section > *,
+.contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+.profile::before,
+.areas-section::before,
+.experience-section::before,
+.projects-section::before,
+.stack-section::before,
+.contact::before {
+  position: absolute;
+  z-index: 0;
+  top: clamp(2rem, 5vw, 4.5rem);
+  right: clamp(1.2rem, 5vw, 5.5rem);
+  color: rgba(241,237,228,.025);
+  font: 700 clamp(6rem, 15vw, 13rem)/.7 var(--mono);
+  letter-spacing: -.08em;
+  pointer-events: none;
+}
+
+.profile::before { content: "01"; }
+.areas-section::before { content: "02"; }
+.experience-section::before { content: "03"; }
+.projects-section::before { content: "04"; }
+.stack-section::before { content: "05"; }
+.contact::before { content: "06"; }
+
+.profile {
+  padding-top: clamp(6.5rem, 10vw, 10rem);
+  padding-bottom: clamp(7rem, 11vw, 10.5rem);
+  border-top-color: rgba(241,237,228,.18);
+  background:
+    radial-gradient(circle at 86% 28%, rgba(109,168,216,.045), transparent 25rem),
+    linear-gradient(180deg, rgba(16,19,25,.22), transparent 48%);
+}
+
+.areas-section {
+  padding-top: clamp(5rem, 7vw, 7rem);
+  padding-bottom: clamp(6rem, 8vw, 8rem);
+  border-top-color: rgba(241,237,228,.07);
+  background:
+    linear-gradient(90deg, rgba(112,216,189,.018), transparent 42%),
+    rgba(8,10,13,.16);
+}
+
+.experience-section {
+  padding-top: clamp(7rem, 11vw, 10.5rem);
+  padding-bottom: clamp(7rem, 11vw, 10rem);
+  border-top-color: rgba(241,237,228,.18);
+  background:
+    radial-gradient(circle at 13% 35%, rgba(218,59,50,.035), transparent 25rem),
+    linear-gradient(180deg, rgba(20,24,32,.18), rgba(11,13,16,.02));
+}
+
+.projects-section {
+  padding-top: clamp(6rem, 9vw, 8.5rem);
+  padding-bottom: clamp(7.5rem, 11vw, 10.5rem);
+  border-top-color: rgba(241,237,228,.08);
+  background:
+    radial-gradient(circle at 84% 16%, rgba(112,216,189,.04), transparent 28rem),
+    rgba(9,12,16,.18);
+}
+
+.stack-section {
+  padding-top: clamp(5rem, 7vw, 7rem);
+  padding-bottom: clamp(6rem, 8vw, 8rem);
+  border-top-color: rgba(241,237,228,.16);
+}
+
+.contact {
+  padding-top: clamp(7.5rem, 12vw, 11rem);
+  padding-bottom: clamp(7.5rem, 12vw, 11rem);
+  border-top-color: rgba(241,237,228,.08);
+  background:
+    linear-gradient(120deg, rgba(218,59,50,.035), transparent 32%),
+    radial-gradient(circle at 80% 70%, rgba(109,168,216,.035), transparent 26rem);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 380px);
+  align-items: end;
+  gap: clamp(2rem, 7vw, 7rem);
+}
+
+.section-heading h2 {
+  max-width: 900px;
+}
+
+.section-heading > p {
+  max-width: 380px;
+  padding-left: 1.1rem;
+  border-left: 1px solid rgba(241,237,228,.12);
+  line-height: 1.7;
+}
+
+.section-index {
+  margin-bottom: 1.15rem;
+  font-size: .67rem;
+  letter-spacing: .16em;
+}
+
+.areas-section .section-heading,
+.stack-section .section-heading {
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.experience-section .section-heading,
+.projects-section .section-heading {
+  margin-bottom: clamp(4rem, 7vw, 6.5rem);
+}
+
+.projects-section .section-heading h2,
+.experience-section .section-heading h2 {
+  font-size: clamp(2.6rem, 5.4vw, 5.25rem);
+}
+
+.stack-section .section-heading h2 {
+  font-size: clamp(2.15rem, 4.4vw, 4.2rem);
+}
+
+@media (max-width: 860px) {
+  .section-heading {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .section-heading > p {
+    max-width: 620px;
+  }
+
+  .profile::before,
+  .areas-section::before,
+  .experience-section::before,
+  .projects-section::before,
+  .stack-section::before,
+  .contact::before {
+    top: 2.6rem;
+    right: 1rem;
+    font-size: clamp(5.5rem, 22vw, 9rem);
+  }
+}
+
+@media (max-width: 620px) {
+  .profile,
+  .areas-section,
+  .experience-section,
+  .projects-section,
+  .stack-section,
+  .contact {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .section-heading > p {
+    padding-left: .85rem;
+  }
+
+  .profile::before,
+  .areas-section::before,
+  .experience-section::before,
+  .projects-section::before,
+  .stack-section::before,
+  .contact::before {
+    opacity: .7;
+  }
+}

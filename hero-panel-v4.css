@@ -72,25 +72,25 @@
   background-size: 100% 100%, 100% 78px;
   background-repeat: no-repeat;
   background-position: 0 0, 0 -90px;
-  animation: gb-rail-scan 8s linear infinite;
+  animation: gb-rail-scan 5.5s linear infinite;
 }
 
 /* Each row wakes as the scan reaches it. */
 .is-personalized .system-map .node {
-  animation: gb-row-pass 8s ease-in-out infinite;
+  animation: gb-row-pass 5.5s ease-in-out infinite;
 }
 
-.is-personalized .system-map .node-b { animation-delay: 2s; }
-.is-personalized .system-map .node-c { animation-delay: 4s; }
-.is-personalized .system-map .node-d { animation-delay: 6s; }
+.is-personalized .system-map .node-b { animation-delay: 1.375s; }
+.is-personalized .system-map .node-c { animation-delay: 2.75s; }
+.is-personalized .system-map .node-d { animation-delay: 4.125s; }
 
-/* Keep the point pulse synchronized with the slower scan. */
+/* Keep the point pulse synchronized with the scan. */
 .is-personalized .system-map .node::before {
-  animation-duration: 8s;
+  animation-duration: 5.5s;
 }
-.is-personalized .system-map .node-b::before { animation-delay: 2s; }
-.is-personalized .system-map .node-c::before { animation-delay: 4s; }
-.is-personalized .system-map .node-d::before { animation-delay: 6s; }
+.is-personalized .system-map .node-b::before { animation-delay: 1.375s; }
+.is-personalized .system-map .node-c::before { animation-delay: 2.75s; }
+.is-personalized .system-map .node-d::before { animation-delay: 4.125s; }
 
 /* The ONLINE light breathes, but never flashes. */
 .is-personalized .system-state i {

@@ -1,0 +1,52 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'styles.css'
+      - 'personalization.css'
+      - 'job-search.css'
+      - 'script.js'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - 'Guillermo_Barbeito_CV_IT_2026.pdf'
+      - '.github/workflows/indexnow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit portfolio URL to IndexNow
+        shell: bash
+        run: |
+          KEY='84c8cd8d-143b-45f1-9054-1fede0af6250'
+          URL='https://jrrguille-bit.github.io/guillermo-barbeito-it/'
+          KEY_LOCATION="https://jrrguille-bit.github.io/guillermo-barbeito-it/${KEY}.txt"
+
+          payload=$(cat <<JSON
+          {
+            "host": "jrrguille-bit.github.io",
+            "key": "${KEY}",
+            "keyLocation": "${KEY_LOCATION}",
+            "urlList": ["${URL}"]
+          }
+          JSON
+          )
+
+          echo "Notifying IndexNow about ${URL}"
+          status=$(curl --silent --show-error --retry 2 --max-time 20 \
+            --output /tmp/indexnow-response.txt \
+            --write-out '%{http_code}' \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --data "${payload}" \
+            https://api.indexnow.org/indexnow || true)
+
+          echo "IndexNow HTTP status: ${status:-request-error}"
+          cat /tmp/indexnow-response.txt 2>/dev/null || true
+          exit 0

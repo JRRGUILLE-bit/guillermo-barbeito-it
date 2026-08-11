@@ -183,6 +183,38 @@
   .area-grid-hiring .area-card:last-child {
     grid-column: auto;
   }
+
+  /* Case-study pages intentionally keep only the essential actions in the
+     fixed header on small screens. The brand returns to the portfolio; language
+     switch and CV remain available without relying on JavaScript. */
+  .case-page .site-header {
+    gap: .75rem;
+  }
+
+  .case-page .site-nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .45rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .case-page .site-nav a {
+    display: none;
+    padding: .55rem .6rem .48rem;
+    border: 1px solid var(--line);
+  }
+
+  .case-page .site-nav .nav-lang,
+  .case-page .site-nav .nav-cv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
 }
 
 @media (max-width: 620px) {

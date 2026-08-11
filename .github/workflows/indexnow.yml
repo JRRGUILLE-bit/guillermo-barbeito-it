@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'en/index.html'
       - 'styles.css'
       - 'personalization.css'
       - 'job-search.css'
@@ -12,6 +13,7 @@ on:
       - 'sitemap.xml'
       - 'robots.txt'
       - 'Guillermo_Barbeito_CV_IT_2026.pdf'
+      - 'Guillermo_Barbeito_CV_IT_2026_EN.pdf'
       - '.github/workflows/indexnow.yml'
   workflow_dispatch:
 
@@ -22,11 +24,12 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Submit portfolio URL to IndexNow
+      - name: Submit portfolio URLs to IndexNow
         shell: bash
         run: |
           KEY='84c8cd8d-143b-45f1-9054-1fede0af6250'
-          URL='https://jrrguille-bit.github.io/guillermo-barbeito-it/'
+          URL_ES='https://jrrguille-bit.github.io/guillermo-barbeito-it/'
+          URL_EN='https://jrrguille-bit.github.io/guillermo-barbeito-it/en/'
           KEY_LOCATION="https://jrrguille-bit.github.io/guillermo-barbeito-it/${KEY}.txt"
 
           payload=$(cat <<JSON
@@ -34,12 +37,12 @@ jobs:
             "host": "jrrguille-bit.github.io",
             "key": "${KEY}",
             "keyLocation": "${KEY_LOCATION}",
-            "urlList": ["${URL}"]
+            "urlList": ["${URL_ES}", "${URL_EN}"]
           }
           JSON
           )
 
-          echo "Notifying IndexNow about ${URL}"
+          echo "Notifying IndexNow about ${URL_ES} and ${URL_EN}"
           status=$(curl --silent --show-error --retry 2 --max-time 20 \
             --output /tmp/indexnow-response.txt \
             --write-out '%{http_code}' \

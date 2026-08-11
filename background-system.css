@@ -1,0 +1,263 @@
+/* TECHNICAL BACKGROUND SYSTEM
+   Blueprint-inspired infrastructure layer for the bilingual home pages only.
+   Content stays dominant; all decorative layers are pointer-inert. */
+
+body.is-personalized {
+  background:
+    radial-gradient(circle at 83% 9%, rgba(109,168,216,.085), transparent 29rem),
+    radial-gradient(circle at 11% 35%, rgba(112,216,189,.045), transparent 34rem),
+    radial-gradient(circle at 76% 72%, rgba(218,59,50,.038), transparent 36rem),
+    #0b0d10;
+}
+
+/* Deep fixed grid + one very slow light scan. */
+body.is-personalized::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: .78;
+  background-image:
+    linear-gradient(105deg,
+      transparent 0%,
+      transparent 34%,
+      rgba(109,168,216,.012) 43%,
+      rgba(112,216,189,.052) 50%,
+      rgba(241,237,228,.018) 56%,
+      transparent 66%,
+      transparent 100%),
+    url("assets/background-grid.svg");
+  background-size: 38vw 100%, 1024px 1024px;
+  background-repeat: no-repeat, repeat;
+  background-position: -45vw 0, 0 0;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.96), rgba(0,0,0,.82) 72%, rgba(0,0,0,.42));
+  animation: gb-background-scan 62s linear infinite;
+}
+
+/* Retain the existing grain, but make it subordinate to the new geometry. */
+body.is-personalized::after {
+  opacity: .012;
+}
+
+main > section {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Structural map layer. Its low-opacity strokes are already encoded in the SVGs. */
+main > section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -7%;
+  bottom: -7%;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: .66;
+  background-repeat: no-repeat, no-repeat;
+  background-size: min(66rem, 74vw) min(66rem, 74vw), clamp(1080px, 96vw, 1600px) auto;
+  background-position: var(--bg-glow-position, 80% 30%), var(--bg-map-position, center center);
+  background-attachment: scroll, fixed;
+}
+
+/* Alternating technical maps + local lighting zones. */
+:is(#inicio, #home)::before {
+  --bg-glow-position: 18% 42%;
+  --bg-map-position: 52% 16%;
+  background-image:
+    radial-gradient(circle, rgba(112,216,189,.055), transparent 62%),
+    url("assets/background-structure-a.svg");
+  opacity: .73;
+}
+
+:is(#perfil, #profile)::before {
+  --bg-glow-position: 83% 36%;
+  --bg-map-position: 48% 42%;
+  background-image:
+    radial-gradient(circle, rgba(109,168,216,.044), transparent 64%),
+    url("assets/background-structure-b.svg");
+}
+
+#areas::before {
+  --bg-glow-position: 16% 58%;
+  --bg-map-position: 52% 54%;
+  background-image:
+    radial-gradient(circle, rgba(112,216,189,.040), transparent 64%),
+    url("assets/background-structure-a.svg");
+  opacity: .58;
+}
+
+:is(#experiencia, #experience)::before {
+  --bg-glow-position: 86% 38%;
+  --bg-map-position: 47% 48%;
+  background-image:
+    radial-gradient(circle, rgba(109,168,216,.042), transparent 64%),
+    url("assets/background-structure-b.svg");
+  opacity: .60;
+}
+
+:is(#proyectos, #projects)::before {
+  --bg-glow-position: 78% 66%;
+  --bg-map-position: 52% 46%;
+  background-image:
+    radial-gradient(circle, rgba(218,59,50,.043), transparent 66%),
+    url("assets/background-structure-a.svg");
+  opacity: .65;
+}
+
+#stack::before {
+  --bg-glow-position: 17% 44%;
+  --bg-map-position: 48% 50%;
+  background-image:
+    radial-gradient(circle, rgba(109,168,216,.035), transparent 66%),
+    url("assets/background-structure-b.svg");
+  opacity: .54;
+}
+
+:is(#contacto, #contact)::before {
+  --bg-glow-position: 78% 50%;
+  --bg-map-position: 51% 72%;
+  background-image:
+    radial-gradient(circle, rgba(112,216,189,.050), transparent 64%),
+    url("assets/background-structure-a.svg");
+  opacity: .62;
+}
+
+/* Large ghost section coordinates. Kept deliberately below normal reading contrast. */
+:is(#perfil, #profile)::after,
+#areas::after,
+:is(#experiencia, #experience)::after,
+:is(#proyectos, #projects)::after,
+#stack::after,
+:is(#contacto, #contact)::after {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  color: rgba(241,237,228,.012);
+  -webkit-text-stroke: 1px rgba(241,237,228,.075);
+  font: 700 clamp(7rem, 15vw, 14rem)/.8 var(--mono);
+  letter-spacing: -.06em;
+  opacity: .72;
+}
+
+:is(#perfil, #profile)::after {
+  content: "01";
+  top: 10%;
+  right: clamp(-1rem, 1vw, 1rem);
+}
+
+#areas::after {
+  content: "02";
+  top: 14%;
+  left: clamp(-1rem, 1vw, 1rem);
+}
+
+:is(#experiencia, #experience)::after {
+  content: "03";
+  top: 8%;
+  right: 0;
+}
+
+:is(#proyectos, #projects)::after {
+  content: "04";
+  top: 9%;
+  left: 0;
+}
+
+#stack::after {
+  content: "05";
+  top: 8%;
+  right: 0;
+}
+
+:is(#contacto, #contact)::after {
+  content: "06";
+  top: 4%;
+  left: 0;
+}
+
+/* Keep high-information surfaces readable over the living background. */
+.is-personalized .hero-system,
+.is-personalized .stack-board,
+.is-personalized .project-feature,
+.is-personalized .project-card,
+.is-personalized .area-card,
+.is-personalized .credential-card,
+.is-personalized .language-card {
+  backdrop-filter: blur(1.5px);
+}
+
+@keyframes gb-background-scan {
+  from { background-position: -45vw 0, 0 0; }
+  to   { background-position: 145vw 0, 18px 12px; }
+}
+
+@media (max-width: 860px) {
+  body.is-personalized::before {
+    opacity: .60;
+    background-size: 54vw 100%, 768px 768px;
+  }
+
+  main > section::before {
+    top: -3%;
+    bottom: -3%;
+    opacity: .46;
+    background-size: 48rem 48rem, 1120px auto;
+    background-attachment: scroll, scroll;
+  }
+
+  :is(#perfil, #profile)::after,
+  #areas::after,
+  :is(#experiencia, #experience)::after,
+  :is(#proyectos, #projects)::after,
+  #stack::after,
+  :is(#contacto, #contact)::after {
+    font-size: clamp(6rem, 24vw, 10rem);
+    opacity: .50;
+  }
+}
+
+@media (max-width: 620px) {
+  /* Mobile gets fewer simultaneous signals rather than a scaled-down desktop map. */
+  #areas::before,
+  #stack::before {
+    display: none;
+  }
+
+  main > section::before {
+    width: 112vw;
+    background-size: 34rem 34rem, 900px auto;
+    opacity: .38;
+  }
+
+  :is(#perfil, #profile)::after,
+  #areas::after,
+  :is(#experiencia, #experience)::after,
+  :is(#proyectos, #projects)::after,
+  #stack::after,
+  :is(#contacto, #contact)::after {
+    font-size: clamp(5.4rem, 28vw, 8rem);
+    -webkit-text-stroke-color: rgba(241,237,228,.055);
+    opacity: .42;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-personalized::before {
+    animation: none;
+    background-position: 72% 0, 0 0;
+  }
+
+  main > section::before {
+    background-attachment: scroll, scroll;
+  }
+}

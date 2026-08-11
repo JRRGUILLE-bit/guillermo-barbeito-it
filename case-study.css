@@ -376,3 +376,153 @@
     flex-direction: column;
   }
 }
+
+/* STEP 07 — PROJECT-SPECIFIC HEADER VISUALS
+   Each case study opens with an architecture summary rather than a text-only cover. */
+.case-header {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(18,22,28,.22), transparent 72%),
+    var(--bg);
+}
+
+.case-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(109,168,216,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109,168,216,.018) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.case-header-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .72fr);
+  grid-template-areas:
+    "crumb crumb"
+    "kicker visual"
+    "title visual"
+    "deck visual"
+    "actions visual"
+    "summary summary";
+  column-gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
+}
+
+.case-breadcrumbs { grid-area: crumb; }
+.case-kicker { grid-area: kicker; }
+.case-title { grid-area: title; }
+.case-deck { grid-area: deck; max-width: 700px; }
+.case-header .case-actions { grid-area: actions; }
+.case-header .case-summary-grid { grid-area: summary; }
+
+.case-header-inner::after {
+  grid-area: visual;
+  content: "";
+  min-height: 440px;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border: 1px solid rgba(241,237,228,.12);
+  color: rgba(241,237,228,.82);
+  white-space: pre;
+  text-align: center;
+  font: 700 clamp(.72rem, 1.05vw, .9rem)/1.85 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  box-shadow: 0 34px 80px rgba(0,0,0,.16);
+}
+
+.case-menelao .case-header-inner::after {
+  content: "SOURCE X\A↘       ↓       ↙\ASHA-256 / VERIFY\A↙               ↘\AMASTER A  ← MATCH →  BACKUP B\A\AX/A · X/B · A/B = MATCH";
+  color: rgba(194,235,221,.9);
+  border-color: rgba(112,216,189,.2);
+  background:
+    linear-gradient(32deg, transparent 49.7%, rgba(112,216,189,.19) 50%, transparent 50.3%),
+    linear-gradient(-32deg, transparent 49.7%, rgba(109,168,216,.16) 50%, transparent 50.3%),
+    linear-gradient(rgba(112,216,189,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112,216,189,.025) 1px, transparent 1px),
+    radial-gradient(circle at 50% 48%, rgba(112,216,189,.11), transparent 15rem),
+    linear-gradient(150deg, rgba(15,21,25,.96), rgba(8,11,14,.98));
+  background-size: auto, auto, 42px 42px, 42px 42px, auto, auto;
+}
+
+.case-foundry .case-header-inner::after {
+  content: "BROWSER / UI\A↓\ASESSION STATE\A↓\AAUTH / FAIL-CLOSED\A↓\AAPPS SCRIPT / SHEETS\A\ATTL · LOCKING · QA";
+  color: rgba(202,220,236,.92);
+  border-color: rgba(109,168,216,.22);
+  background:
+    linear-gradient(90deg, transparent 24%, rgba(109,168,216,.12) 24.2%, transparent 24.4%, transparent 75%, rgba(112,216,189,.1) 75.2%, transparent 75.4%),
+    linear-gradient(rgba(109,168,216,.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109,168,216,.026) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(109,168,216,.1), transparent 16rem),
+    linear-gradient(150deg, rgba(14,19,25,.97), rgba(8,10,14,.99));
+  background-size: auto, 46px 46px, 46px 46px, auto, auto;
+}
+
+.case-jona .case-header-inner::after {
+  content: "WEATHER        MOBILITY\A↘             ↙\AOPS HUB\A↗             ↖\ADOCUMENTS       TOOLS\A\ACLOSEOUT / PRIVACY";
+  color: rgba(225,220,208,.9);
+  border-color: rgba(218,59,50,.2);
+  background:
+    linear-gradient(35deg, transparent 49.7%, rgba(112,216,189,.12) 50%, transparent 50.3%),
+    linear-gradient(-35deg, transparent 49.7%, rgba(218,59,50,.15) 50%, transparent 50.3%),
+    linear-gradient(rgba(241,237,228,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241,237,228,.018) 1px, transparent 1px),
+    radial-gradient(circle at 50% 46%, rgba(218,59,50,.085), transparent 15rem),
+    linear-gradient(150deg, rgba(19,18,20,.97), rgba(9,11,13,.99));
+  background-size: auto, auto, 48px 48px, 48px 48px, auto, auto;
+}
+
+.case-header .case-summary-grid {
+  margin-top: 3.2rem;
+  border-color: rgba(241,237,228,.1);
+  background: rgba(241,237,228,.07);
+}
+
+.case-header .case-summary-grid > div {
+  background: rgba(11,13,16,.72);
+}
+
+@media (max-width: 980px) {
+  .case-header-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "crumb"
+      "kicker"
+      "title"
+      "deck"
+      "visual"
+      "summary"
+      "actions";
+  }
+
+  .case-header-inner::after {
+    min-height: 330px;
+    margin-top: 2.4rem;
+  }
+
+  .case-header .case-summary-grid {
+    margin-top: 1.6rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .case-header-inner::after {
+    min-height: 255px;
+    padding: 1rem;
+    font-size: .57rem;
+    line-height: 1.7;
+    letter-spacing: .06em;
+  }
+
+  .case-header .case-summary-grid {
+    margin-top: 1rem;
+  }
+}

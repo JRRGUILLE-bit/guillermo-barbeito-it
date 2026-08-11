@@ -1,31 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" fill="none">
   <g stroke="#DCE3E8" stroke-width="1">
-    <path d="M84 312H366V170H716" stroke-opacity=".08"/>
-    <path d="M366 312V632H822V806H1184" stroke-opacity=".085"/>
-    <path d="M842 110V302H1276V498H1518" stroke-opacity=".075"/>
-    <path d="M116 942H510V782H728" stroke-opacity=".08"/>
-    <path d="M990 970V684H1370V590" stroke-opacity=".085"/>
+    <path d="M84 312H366V170H716" stroke-opacity=".09"/>
+    <path d="M366 312V632H822V806H1184" stroke-opacity=".095"/>
+    <path d="M842 110V302H1276V498H1518" stroke-opacity=".084"/>
+    <path d="M116 942H510V782H728" stroke-opacity=".09"/>
+    <path d="M990 970V684H1370V590" stroke-opacity=".095"/>
   </g>
 
   <g stroke="#6DA8D8" stroke-width="1">
-    <path d="M84 312H366V170" stroke-opacity=".24"/>
+    <path d="M84 312H366V170" stroke-opacity=".268"/>
     <circle cx="366" cy="312" r="4" fill="#6DA8D8" fill-opacity=".64" stroke="none"/>
-    <rect x="708.5" y="162.5" width="15" height="15" stroke-opacity=".32"/>
+    <rect x="708.5" y="162.5" width="15" height="15" stroke-opacity=".36"/>
   </g>
 
   <g stroke="#70D8BD" stroke-width="1">
-    <path d="M822 806H1118V684H1370" stroke-opacity=".22"/>
+    <path d="M822 806H1118V684H1370" stroke-opacity=".246"/>
     <circle cx="1118" cy="806" r="4" fill="#70D8BD" fill-opacity=".65" stroke="none"/>
-    <circle cx="1118" cy="806" r="12" stroke-opacity=".08"/>
+    <circle cx="1118" cy="806" r="12" stroke-opacity=".09"/>
   </g>
 
   <g stroke="#EF5147" stroke-width="1">
-    <path d="M1276 498H1438V634" stroke-opacity=".22"/>
-    <rect x="1430.5" y="626.5" width="15" height="15" stroke-opacity=".34"/>
+    <path d="M1276 498H1438V634" stroke-opacity=".246"/>
+    <rect x="1430.5" y="626.5" width="15" height="15" stroke-opacity=".38"/>
     <circle cx="1276" cy="498" r="3" fill="#EF5147" fill-opacity=".62" stroke="none"/>
   </g>
 
-  <g stroke="#DCE3E8" stroke-opacity=".15" stroke-width="1">
+  <g stroke="#DCE3E8" stroke-opacity=".17" stroke-width="1">
     <path d="M246 112v34M229 129h34"/>
     <path d="M1002 232v34M985 249h34"/>
     <path d="M1480 362v34M1463 379h34"/>
@@ -33,7 +33,7 @@
     <path d="M1262 1008v34M1245 1025h34"/>
   </g>
 
-  <g fill="#9EA3AA" fill-opacity=".22" font-family="monospace" font-size="14" letter-spacing="2">
+  <g fill="#9EA3AA" fill-opacity=".17" font-family="monospace" font-size="14" letter-spacing="2">
     <text x="104" y="286">B01 / INPUT</text>
     <text x="390" y="608">B02 / TRACE</text>
     <text x="862" y="278">56.1645° W</text>
@@ -42,7 +42,7 @@
     <text x="1288" y="474">B04 / OUTPUT</text>
   </g>
 
-  <g fill="#9EA3AA" fill-opacity=".10">
+  <g fill="#9EA3AA" fill-opacity=".11">
     <circle cx="454" cy="454" r="1.5"/><circle cx="476" cy="454" r="1.5"/><circle cx="498" cy="454" r="1.5"/><circle cx="520" cy="454" r="1.5"/><circle cx="542" cy="454" r="1.5"/><circle cx="564" cy="454" r="1.5"/>
     <circle cx="454" cy="476" r="1.5"/><circle cx="476" cy="476" r="1.5"/><circle cx="498" cy="476" r="1.5"/><circle cx="520" cy="476" r="1.5"/><circle cx="542" cy="476" r="1.5"/><circle cx="564" cy="476" r="1.5"/>
     <circle cx="454" cy="498" r="1.5"/><circle cx="476" cy="498" r="1.5"/><circle cx="498" cy="498" r="1.5"/><circle cx="520" cy="498" r="1.5"/><circle cx="542" cy="498" r="1.5"/><circle cx="564" cy="498" r="1.5"/>

@@ -1,0 +1,184 @@
+/* STEP 08 — CASE STUDY READING RHYTHM
+   Make long technical narratives scannable without reducing content. */
+.case-content {
+  counter-reset: caseSection;
+}
+
+.case-content .case-section {
+  position: relative;
+  counter-increment: caseSection;
+  padding-right: clamp(0rem, 3vw, 2rem);
+}
+
+.case-content .case-section::before {
+  content: counter(caseSection, decimal-leading-zero);
+  position: absolute;
+  z-index: -1;
+  top: -.18em;
+  right: 0;
+  color: rgba(241,237,228,.026);
+  font: 700 clamp(5.5rem, 11vw, 9.5rem)/.75 var(--mono);
+  letter-spacing: -.08em;
+  pointer-events: none;
+}
+
+.case-content .case-section + .case-section {
+  border-top: 0;
+}
+
+.case-content .case-section + .case-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(100%, 760px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(241,237,228,.16), rgba(241,237,228,.025) 70%, transparent);
+}
+
+.case-section-index {
+  margin-bottom: 1.25rem;
+  color: var(--accent-bright);
+  font-size: .62rem;
+  letter-spacing: .15em;
+}
+
+.case-section h2 {
+  position: relative;
+  max-width: 720px;
+  margin-bottom: 1.8rem;
+  font-size: clamp(2.3rem, 4.6vw, 4.15rem);
+  line-height: .98;
+}
+
+.case-section h2 + p {
+  max-width: 760px;
+  color: #c9c6bf;
+  font-size: clamp(1.04rem, 1.3vw, 1.16rem);
+  line-height: 1.72;
+}
+
+.case-section p,
+.case-section li {
+  max-width: 760px;
+}
+
+.case-section h3 {
+  margin-top: 2.5rem;
+  padding-left: .8rem;
+  border-left: 2px solid rgba(109,168,216,.45);
+  color: #d8d4cc;
+  font-size: 1.05rem;
+  letter-spacing: .05em;
+}
+
+.case-section ul,
+.case-section ol {
+  max-width: 720px;
+  margin: 1.4rem 0 1.8rem;
+  padding-left: 1.35rem;
+}
+
+.case-section li + li {
+  margin-top: .55rem;
+}
+
+.case-section code {
+  padding: .12rem .3rem;
+  border: 1px solid rgba(109,168,216,.16);
+  background: rgba(109,168,216,.045);
+  color: #cbd9e5;
+  font-family: var(--mono);
+  font-size: .9em;
+}
+
+.case-callout {
+  max-width: 760px;
+  margin: 2.3rem 0;
+  padding: 1.15rem 1.25rem 1.15rem 1.35rem;
+  border: 0;
+  border-left: 2px solid rgba(112,216,189,.65);
+  background: linear-gradient(90deg, rgba(112,216,189,.06), transparent 86%);
+}
+
+.case-callout span {
+  margin-bottom: .7rem;
+  font-size: .58rem;
+  letter-spacing: .14em;
+}
+
+.case-callout p {
+  color: #c9cfcb;
+  font-size: .95rem;
+  line-height: 1.65;
+}
+
+.case-proof-grid {
+  gap: 1px;
+  max-width: 780px;
+  margin-top: 2.2rem;
+  border-top: 1px solid rgba(241,237,228,.1);
+  border-left: 1px solid rgba(241,237,228,.1);
+  background: rgba(241,237,228,.07);
+}
+
+.case-proof {
+  position: relative;
+  min-height: 175px;
+  padding: 1.2rem;
+  overflow: hidden;
+  border: 0;
+  border-right: 1px solid rgba(241,237,228,.1);
+  border-bottom: 1px solid rgba(241,237,228,.1);
+  background: linear-gradient(150deg, rgba(18,22,28,.56), rgba(10,12,15,.82));
+}
+
+.case-proof::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 1px;
+  background: var(--signal);
+  opacity: .65;
+}
+
+.case-proof span {
+  color: rgba(112,216,189,.76);
+  font-size: .57rem;
+  letter-spacing: .12em;
+}
+
+.case-proof strong {
+  margin: 2.05rem 0 .6rem;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  letter-spacing: -.025em;
+  text-transform: none;
+}
+
+.case-proof p {
+  color: rgba(158,163,170,.88);
+  font-size: .84rem;
+  line-height: 1.58;
+}
+
+@media (max-width: 700px) {
+  .case-content .case-section {
+    padding-right: 0;
+  }
+
+  .case-content .case-section::before {
+    top: .05rem;
+    right: -.1rem;
+    font-size: 5.7rem;
+  }
+
+  .case-section h2 {
+    max-width: 92%;
+  }
+
+  .case-proof-grid {
+    border-right: 1px solid rgba(241,237,228,.1);
+  }
+}

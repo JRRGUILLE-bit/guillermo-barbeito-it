@@ -1,0 +1,327 @@
+/* HERO PANEL V3 — compact operational pipeline.
+   This file intentionally overrides only the right-hand hero system panel. */
+
+.is-personalized .hero-system {
+  min-height: 510px;
+  margin-block: clamp(2.4rem, 5vh, 4rem);
+  border-color: rgba(241,237,228,.16);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(109,168,216,.045), transparent 18rem),
+    radial-gradient(circle at 80% 78%, rgba(112,216,189,.035), transparent 18rem),
+    linear-gradient(180deg, #0c1015, #090c10);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.012),
+    0 28px 70px rgba(0,0,0,.16);
+}
+
+.is-personalized .hero-system::before {
+  inset: 42px 28px;
+  background:
+    linear-gradient(var(--blue), var(--blue)) left top / 22px 1px no-repeat,
+    linear-gradient(var(--blue), var(--blue)) left top / 1px 22px no-repeat,
+    linear-gradient(var(--signal), var(--signal)) right bottom / 22px 1px no-repeat,
+    linear-gradient(var(--signal), var(--signal)) right bottom / 1px 22px no-repeat;
+  opacity: .28;
+}
+
+.is-personalized .hero-system::after {
+  opacity: .08;
+  background: linear-gradient(115deg, transparent 46%, rgba(112,216,189,.09) 50%, transparent 54%);
+}
+
+.is-personalized .system-head,
+.is-personalized .system-foot {
+  padding-inline: 1.05rem;
+}
+
+.is-personalized .system-map {
+  position: relative;
+  min-height: 420px;
+  padding: 3rem clamp(1.4rem, 3.6vw, 2.7rem) 1.15rem;
+  display: grid;
+  grid-template-rows: repeat(4, minmax(66px, 1fr)) 3.65rem;
+  gap: 0;
+  overflow: hidden;
+}
+
+.is-personalized .system-map::before {
+  content: "INCIDENT  →  STABLE OPERATION  →  IMPROVEMENT";
+  position: absolute;
+  top: 1.05rem;
+  left: clamp(1.4rem, 3.6vw, 2.7rem);
+  width: min(72%, 330px);
+  padding-bottom: .7rem;
+  border-bottom: 1px solid rgba(112,216,189,.32);
+  color: rgba(158,163,170,.55);
+  font: 700 .56rem/1 var(--mono);
+  letter-spacing: .105em;
+}
+
+/* Process rail: a quiet vertical spine behind the four stages. */
+.is-personalized .system-map::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 4.25rem;
+  bottom: 5rem;
+  left: calc(clamp(1.4rem, 3.6vw, 2.7rem) + 2.27rem);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(112,216,189,.45),
+    rgba(109,168,216,.28) 34%,
+    rgba(241,237,228,.18) 67%,
+    rgba(218,59,50,.36)
+  );
+  opacity: .74;
+}
+
+.is-personalized .system-map svg {
+  display: none;
+}
+
+.is-personalized .system-map .node {
+  position: relative;
+  z-index: 1;
+  inset: auto;
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 2.8rem minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+  align-content: center;
+  align-items: center;
+  gap: .85rem;
+  padding: .7rem .1rem .7rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(241,237,228,.085);
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  transform: none;
+}
+
+.is-personalized .system-map .node:first-of-type {
+  border-top: 0;
+}
+
+.is-personalized .system-map .node span {
+  grid-row: auto;
+  align-self: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent !important;
+  color: var(--signal);
+  font: 700 .66rem/1 var(--mono);
+  letter-spacing: .1em;
+}
+
+.is-personalized .system-map .node strong {
+  grid-column: 2;
+  margin: 0;
+  color: #ebe7df;
+  font-size: .92rem;
+  line-height: 1;
+  letter-spacing: .105em;
+}
+
+.is-personalized .system-map .node small {
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0;
+  color: rgba(190,191,189,.58);
+  font-size: .63rem;
+  line-height: 1.2;
+  letter-spacing: .025em;
+  white-space: nowrap;
+}
+
+/* One small status light per stage. */
+.is-personalized .system-map .node::before {
+  content: "";
+  position: absolute;
+  left: 2.08rem;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 0 4px rgba(112,216,189,.045), 0 0 12px rgba(112,216,189,.34);
+  transform: translateY(-50%);
+  animation: gb-stage-pulse 7.2s ease-in-out infinite;
+}
+
+.is-personalized .system-map .node::after {
+  content: "";
+  position: absolute;
+  left: 2.45rem;
+  top: 50%;
+  width: .55rem;
+  height: 1px;
+  background: rgba(112,216,189,.34);
+  opacity: .8;
+}
+
+.is-personalized .system-map .node-b span { color: var(--blue); }
+.is-personalized .system-map .node-b::before {
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(109,168,216,.04), 0 0 12px rgba(109,168,216,.3);
+  animation-delay: 1.8s;
+}
+.is-personalized .system-map .node-b::after { background: rgba(109,168,216,.34); }
+
+.is-personalized .system-map .node-c span { color: rgba(241,237,228,.68); }
+.is-personalized .system-map .node-c::before {
+  background: rgba(241,237,228,.72);
+  box-shadow: 0 0 0 4px rgba(241,237,228,.025), 0 0 10px rgba(241,237,228,.12);
+  animation-delay: 3.6s;
+}
+.is-personalized .system-map .node-c::after { background: rgba(241,237,228,.26); }
+
+.is-personalized .system-map .node-d span { color: var(--accent-bright); }
+.is-personalized .system-map .node-d::before {
+  background: var(--accent-bright);
+  box-shadow: 0 0 0 4px rgba(218,59,50,.035), 0 0 12px rgba(218,59,50,.25);
+  animation-delay: 5.4s;
+}
+.is-personalized .system-map .node-d::after { background: rgba(218,59,50,.34); }
+
+/* Replace the old large GB box with a thin operating-principle strip. */
+.is-personalized .system-map .core {
+  position: relative;
+  z-index: 1;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  transform: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  place-items: initial;
+  align-content: center;
+  align-items: center;
+  gap: .9rem;
+  margin: .8rem 0 0;
+  padding: .65rem 0 0;
+  border: 0;
+  border-top: 1px solid rgba(112,216,189,.18);
+  background: transparent;
+  box-shadow: none;
+}
+
+.is-personalized .system-map .core::before,
+.is-personalized .system-map .core::after {
+  display: none;
+}
+
+.is-personalized .system-map .core span {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding-right: .9rem;
+  border: 0;
+  border-right: 1px solid rgba(112,216,189,.25);
+  color: var(--signal);
+  font: 700 .62rem/1 var(--mono);
+  letter-spacing: .1em;
+}
+
+.is-personalized .system-map .core small {
+  max-width: none;
+  margin: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.is-personalized .system-map .core small::after {
+  content: "RESOLVE  →  DOCUMENT  →  IMPROVE";
+  color: rgba(241,237,228,.68);
+  font: 700 .57rem/1 var(--mono);
+  letter-spacing: .105em;
+}
+
+.is-personalized .system-foot {
+  color: rgba(158,163,170,.62);
+}
+
+.is-personalized .system-foot span:last-child {
+  color: var(--signal);
+}
+
+@keyframes gb-stage-pulse {
+  0%, 13%, 100% { transform: translateY(-50%) scale(1); opacity: .72; }
+  5% { transform: translateY(-50%) scale(1.55); opacity: 1; }
+  9% { transform: translateY(-50%) scale(1); opacity: .82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-personalized .system-map .node::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .is-personalized .hero-system {
+    min-height: 500px;
+  }
+
+  .is-personalized .system-map {
+    min-height: 410px;
+    padding: 2.8rem 1rem 1rem;
+    grid-template-rows: repeat(4, minmax(64px, 1fr)) 3.8rem;
+  }
+
+  .is-personalized .system-map::before {
+    left: 1rem;
+    width: 78%;
+    font-size: .49rem;
+  }
+
+  .is-personalized .system-map::after {
+    left: 3.03rem;
+    top: 4rem;
+    bottom: 5rem;
+  }
+
+  .is-personalized .system-map .node {
+    grid-template-columns: 2.6rem 1fr;
+    grid-template-rows: auto auto;
+    gap: .25rem .7rem;
+    padding-block: .62rem;
+  }
+
+  .is-personalized .system-map .node strong {
+    font-size: .84rem;
+  }
+
+  .is-personalized .system-map .node small {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: .18rem;
+    font-size: .56rem;
+    white-space: normal;
+  }
+
+  .is-personalized .system-map .node::before {
+    left: 2rem;
+  }
+
+  .is-personalized .system-map .node::after {
+    left: 2.36rem;
+    width: .42rem;
+  }
+
+  .is-personalized .system-map .core {
+    gap: .65rem;
+  }
+
+  .is-personalized .system-map .core small::after {
+    font-size: .5rem;
+    letter-spacing: .07em;
+  }
+}

@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
   <defs>
     <pattern id="minor" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" stroke="#DCE3E8" stroke-opacity=".028" stroke-width="1"/>
-      <circle cx="1" cy="1" r="1" fill="#9EABB4" fill-opacity=".055"/>
+      <path d="M32 0H0V32" stroke="#DCE3E8" stroke-opacity=".024" stroke-width="1"/>
+      <circle cx="1" cy="1" r="1" fill="#9EABB4" fill-opacity=".047"/>
     </pattern>
     <pattern id="major" width="128" height="128" patternUnits="userSpaceOnUse">
       <rect width="128" height="128" fill="url(#minor)"/>
-      <path d="M128 0H0V128" stroke="#DCE3E8" stroke-opacity=".065" stroke-width="1"/>
+      <path d="M128 0H0V128" stroke="#DCE3E8" stroke-opacity=".055" stroke-width="1"/>
     </pattern>
   </defs>
   <rect width="1024" height="1024" fill="url(#major)"/>
-  <g stroke="#DCE3E8" stroke-opacity=".10" stroke-width="1">
+  <g stroke="#DCE3E8" stroke-opacity=".085" stroke-width="1">
     <path d="M256 246v20M246 256h20"/>
     <path d="M768 502v20M758 512h20"/>
     <path d="M512 758v20M502 768h20"/>
   </g>
-  <g fill="#70D8BD" fill-opacity=".12">
+  <g fill="#70D8BD" fill-opacity=".10">
     <circle cx="128" cy="384" r="1.5"/>
     <circle cx="640" cy="128" r="1.5"/>
   </g>

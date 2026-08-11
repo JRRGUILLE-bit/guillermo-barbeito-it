@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d10">
+  <title>MENELAO — Case study | Guillermo Barbeito</title>
+  <meta name="description" content="Case study de MENELAO: aplicación local en Python para copia redundante X/A/B, verificación SHA-256, manifests y reportes de ingesta.">
+  <meta name="author" content="Guillermo Barbeito">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/">
+  <link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/">
+  <link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/menelao/">
+  <link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MENELAO — Copia redundante e integridad de datos">
+  <meta property="og:description" content="Python desktop app: copia X/A/B, SHA-256, manifests y reportes verificables.">
+  <meta property="og:url" content="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/">
+  <meta property="og:image" content="https://jrrguille-bit.github.io/guillermo-barbeito-it/0cbaab8f-3126-4453-87c5-9ada4d837f59.png">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon-v2.svg?v=20260811d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../personalization.css">
+  <link rel="stylesheet" href="../../job-search.css">
+  <link rel="stylesheet" href="../../case-study.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"MENELAO — copia redundante e integridad de datos",
+    "url":"https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/",
+    "inLanguage":"es-UY",
+    "author":{"@type":"Person","name":"Guillermo Barbeito","url":"https://jrrguille-bit.github.io/guillermo-barbeito-it/"},
+    "about":{"@type":"SoftwareApplication","name":"MENELAO","applicationCategory":"UtilitiesApplication","operatingSystem":"Linux"}
+  }
+  </script>
+</head>
+<body class="case-page">
+  <header class="site-header">
+    <a class="brand" href="../../"><span class="brand-mark">GB</span><span class="brand-status"><i></i> MONTEVIDEO / UY</span></a>
+    <nav class="site-nav" aria-label="Navegación">
+      <a href="../../#proyectos">Proyectos</a>
+      <a href="../../#experiencia">Experiencia</a>
+      <a href="../../#contacto">Contacto</a>
+      <a class="nav-lang" href="../../en/projects/menelao/" lang="en">EN</a>
+      <a class="nav-cv" href="../../Guillermo_Barbeito_CV_IT_2026.pdf" download>CV ↓</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-header">
+      <div class="case-header-inner">
+        <div class="case-breadcrumbs"><a href="../../">Guillermo Barbeito / IT</a><span>→</span><a href="../../#proyectos">Proyectos</a><span>→</span><span>MENELAO</span></div>
+        <p class="case-kicker">PYTHON DESKTOP APP / DATA INTEGRITY</p>
+        <h1 class="case-title">MENELAO</h1>
+        <p class="case-deck">Una herramienta local para copiar una fuente a dos destinos independientes y demostrar —no asumir— que las tres ubicaciones conservan los mismos archivos y bytes.</p>
+        <div class="case-summary-grid">
+          <div><span>Problema</span><strong>Integridad de datos durante ingesta</strong></div>
+          <div><span>Modelo</span><strong>X / A / B — Triángulo Dorado</strong></div>
+          <div><span>Stack</span><strong>Python · Tkinter · pytest · SHA-256</strong></div>
+          <div><span>Estado</span><strong>MVP local funcional</strong></div>
+        </div>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://github.com/JRRGUILLE-bit/project-isosceles" target="_blank" rel="noopener noreferrer">Ver código ↗</a>
+          <a class="button button-ghost" href="mailto:gbarbeitor@yahoo.com?subject=IT%20opportunity%20-%20MENELAO%20case%20study">Contactar a Guillermo ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <article class="case-content">
+        <section class="case-section">
+          <div class="case-section-index">01 / CONTEXTO</div>
+          <h2>Copiar no es lo mismo que verificar.</h2>
+          <p>En una ingesta bajo presión de tiempo, una transferencia puede terminar sin demostrar que el destino contiene exactamente los mismos bytes que la fuente. MENELAO parte de esa diferencia: el objetivo no es sólo mover archivos, sino dejar evidencia de que una fuente original y dos copias independientes coinciden.</p>
+          <p>El caso está inspirado en un entorno donde tarjetas, SSDs y carpetas de rodaje pueden reutilizarse después de una copia. Por eso el diseño evita cualquier operación destructiva y separa claramente la verificación técnica de la decisión humana final.</p>
+          <div class="case-callout"><span>PRINCIPIO DE DISEÑO</span><p>El software nunca formatea, borra ni modifica la fuente. Una verificación exitosa informa al operador; no reemplaza su criterio.</p></div>
+        </section>
+
+        <section class="case-section">
+          <div class="case-section-index">02 / SOLUCIÓN</div>
+          <h2>Un triángulo de verificación X/A/B.</h2>
+          <p>MENELAO modela cada ingesta como tres ubicaciones:</p>
+          <ul>
+            <li><strong>X — Source:</strong> tarjeta, SSD o carpeta original.</li>
+            <li><strong>A — Master:</strong> copia principal local.</li>
+            <li><strong>B — Backup:</strong> copia externa independiente.</li>
+          </ul>
+          <p>Una ingesta sólo se considera verificada cuando pasan X↔A, X↔B y A↔B. Para cada archivo se calculan hashes SHA-256 y se escriben manifests y reportes legibles que documentan el proceso.</p>
+          <div class="case-proof-grid">
+            <div class="case-proof"><span>01 / HASH</span><strong>SHA-256</strong><p>Comparación por contenido, no sólo por nombre o tamaño.</p></div>
+            <div class="case-proof"><span>02 / REDUNDANCY</span><strong>2 destinos</strong><p>Master local y backup independiente, ambos verificados contra la fuente.</p></div>
+            <div class="case-proof"><span>03 / EVIDENCE</span><strong>Manifests + reports</strong><p>Salida legible para documentar la ingesta y revisar fallas.</p></div>
+            <div class="case-proof"><span>04 / SAFETY</span><strong>No destructivo</strong><p>El programa no elimina, formatea ni altera el medio original.</p></div>
+          </div>
+        </section>
+
+        <section class="case-section">
+          <div class="case-section-index">03 / DECISIONES TÉCNICAS</div>
+          <h2>Reducir riesgo antes de agregar comodidad.</h2>
+          <h3>Procesamiento local</h3>
+          <p>Google Drive y otras sincronizaciones remotas quedan fuera del modelo de seguridad X/A/B. Pueden existir después, pero no sustituyen la verificación local inmediata.</p>
+          <h3>Interfaz de escritorio</h3>
+          <p>La aplicación usa Tkinter y selectores nativos de carpetas para que el operador seleccione explícitamente fuente y destinos sin depender de comandos de terminal durante la operación.</p>
+          <h3>Pruebas</h3>
+          <p>El repositorio incluye tests con pytest y documentación separada para manual de usuario, modelo de seguridad, overview técnico, roadmap y changelog.</p>
+          <h3>Límites explícitos</h3>
+          <p>El proyecto se presenta como MVP funcional y no como producto certificado. También documenta qué no hace: no formatea, no expulsa, no monta, no transcodifica ni sube material.</p>
+        </section>
+
+        <section class="case-section">
+          <div class="case-section-index">04 / QUÉ DEMUESTRA</div>
+          <h2>Ingeniería aplicada a una operación con consecuencias reales.</h2>
+          <p>Más que una demo de Python, MENELAO muestra una forma de trabajar: identificar dónde está el riesgo operativo, diseñar una condición de éxito verificable, limitar responsabilidades del software y documentar el handoff para que otra persona pueda operar y auditar el sistema.</p>
+        </section>
+      </article>
+
+      <aside class="case-side">
+        <div class="case-side-card">
+          <div class="case-side-label"><span>ROLE SIGNAL</span><span>GB / 01</span></div>
+          <h3>Qué muestra</h3>
+          <p>Python, integridad de datos, diseño defensivo, testing, documentación y foco operativo.</p>
+          <div class="case-side-links">
+            <a href="https://github.com/JRRGUILLE-bit/project-isosceles" target="_blank" rel="noopener noreferrer">Repositorio ↗</a>
+            <a href="https://github.com/JRRGUILLE-bit/project-isosceles/blob/main/docs/TECHNICAL_OVERVIEW.md" target="_blank" rel="noopener noreferrer">Technical overview ↗</a>
+            <a href="https://github.com/JRRGUILLE-bit/project-isosceles/blob/main/docs/SAFETY_MODEL.md" target="_blank" rel="noopener noreferrer">Safety model ↗</a>
+          </div>
+        </div>
+        <div class="case-side-card">
+          <div class="case-side-label"><span>FIT</span><span>SUPPORT / OPS</span></div>
+          <h3>Relevancia laboral</h3>
+          <p>El mismo patrón sirve en soporte y operaciones: definir un estado correcto, verificarlo, reducir riesgo y dejar evidencia útil.</p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="case-related">
+      <h2>Otros case studies</h2>
+      <div class="case-related-grid">
+        <a class="case-related-card" href="../foundry/"><span>WEB / STATE / SECURITY</span><strong>Foundry companion web</strong><small>Estado temporal, QA automatizado y backend fail-closed.</small></a>
+        <a class="case-related-card" href="../jona-logistica/"><span>OPS / AUTOMATION</span><strong>Jona Logística</strong><small>Base operativa de rodaje, clima multi-fuente y cierre de privacidad.</small></a>
+      </div>
+      <div class="case-hire"><h2>¿Buscás a alguien que pueda diagnosticar, verificar y documentar?</h2><p>Guillermo está orientando su búsqueda a IT Support, Product Support y Technical Operations.</p><div class="case-actions"><a class="button button-primary" href="mailto:gbarbeitor@yahoo.com?subject=IT%20opportunity%20-%20Guillermo%20Barbeito">Escribirle ↗</a><a class="button button-ghost" href="../../Guillermo_Barbeito_CV_IT_2026.pdf" download>Descargar CV ↓</a></div></div>
+    </section>
+  </main>
+
+  <footer class="case-footer"><div class="case-footer-inner"><span>GUILLERMO BARBEITO / IT</span><span>MENELAO / CASE STUDY</span></div></footer>
+</body>
+</html>

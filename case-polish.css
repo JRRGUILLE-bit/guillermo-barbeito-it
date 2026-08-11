@@ -306,3 +306,156 @@
     border-bottom: 1px solid rgba(241,237,228,.08);
   }
 }
+
+/* STEP 10 — RELATED WORK + HIRING CLOSE
+   Close as an editorial conclusion, not as a promotional banner. */
+.case-related {
+  position: relative;
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+  border-top-color: rgba(241,237,228,.12);
+}
+
+.case-related > h2 {
+  max-width: 720px;
+  margin-bottom: 2.6rem;
+  font-size: clamp(2.3rem, 4.5vw, 4.1rem);
+}
+
+.case-related-grid {
+  gap: 1px;
+  border-top: 1px solid rgba(241,237,228,.1);
+  border-left: 1px solid rgba(241,237,228,.1);
+  background: rgba(241,237,228,.06);
+}
+
+.case-related-card {
+  position: relative;
+  min-height: 250px;
+  padding: 1.4rem;
+  overflow: hidden;
+  border: 0;
+  border-right: 1px solid rgba(241,237,228,.1);
+  border-bottom: 1px solid rgba(241,237,228,.1);
+  background: linear-gradient(150deg, rgba(17,21,27,.62), rgba(9,11,14,.88));
+  transition: background .2s ease, transform .2s ease;
+}
+
+.case-related-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 2px;
+  background: var(--signal);
+  opacity: .58;
+}
+
+.case-related-card:nth-child(2)::before {
+  background: var(--blue);
+}
+
+.case-related-card span {
+  color: rgba(158,163,170,.72);
+  font-size: .57rem;
+  letter-spacing: .13em;
+}
+
+.case-related-card strong {
+  max-width: 88%;
+  font-size: clamp(1.65rem, 3vw, 2.65rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.case-related-card small {
+  max-width: 440px;
+  color: rgba(158,163,170,.84);
+  font-size: .82rem;
+}
+
+.case-related-card:hover,
+.case-related-card:focus-visible {
+  transform: translateY(-3px);
+  background: linear-gradient(150deg, rgba(22,27,34,.78), rgba(10,12,15,.94));
+}
+
+.case-hire {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: end;
+  margin-top: clamp(5rem, 8vw, 7rem);
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 0;
+  border: 0;
+  border-top: 1px solid rgba(241,237,228,.16);
+  background: transparent;
+}
+
+.case-hire::before {
+  content: "AVAILABLE / IT";
+  position: absolute;
+  top: .8rem;
+  right: 0;
+  color: rgba(112,216,189,.65);
+  font: 700 .57rem/1 var(--mono);
+  letter-spacing: .14em;
+}
+
+.case-hire h2 {
+  max-width: 820px;
+  font-size: clamp(2.55rem, 5.3vw, 5rem);
+  line-height: .92;
+  letter-spacing: -.055em;
+}
+
+.case-hire p {
+  grid-column: 1;
+  max-width: 700px;
+  margin: 1.1rem 0 0;
+  color: rgba(158,163,170,.9);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.case-hire .case-actions {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+@media (max-width: 820px) {
+  .case-hire {
+    grid-template-columns: 1fr;
+  }
+
+  .case-hire p,
+  .case-hire .case-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .case-hire .case-actions {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .case-related-card {
+    min-height: 210px;
+  }
+
+  .case-hire::before {
+    position: static;
+    grid-row: 1;
+  }
+
+  .case-hire h2 {
+    grid-row: 2;
+  }
+}

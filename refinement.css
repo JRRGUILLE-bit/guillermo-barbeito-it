@@ -117,3 +117,34 @@
 .is-personalized .project-copy > p:not(.project-role) {
   color: #d7d3cb;
 }
+
+/* STEP 04 — Demote the hero ledger so the hiring path reads first. */
+.is-personalized .hero-meta {
+  max-width: 680px;
+  margin-top: 3.2rem;
+  border-top-color: rgba(241,237,228,.075);
+  border-bottom: 0;
+  opacity: .72;
+}
+
+.is-personalized .hero-meta div {
+  padding-top: .85rem;
+  padding-bottom: .55rem;
+}
+
+.is-personalized .hero-meta div + div {
+  border-left-color: rgba(241,237,228,.055);
+}
+
+.is-personalized .hero-meta strong {
+  color: #c2c0ba;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 620px) {
+  .is-personalized .hero-meta {
+    margin-top: 2.5rem;
+    opacity: .82;
+  }
+}

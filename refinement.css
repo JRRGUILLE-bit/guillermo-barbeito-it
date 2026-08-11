@@ -244,3 +244,10 @@
     font-size: .94em;
   }
 }
+
+/* STEP 08 — Make the surname outline quieter and more typographic. */
+.is-personalized .hero h1 span {
+  color: rgba(241,237,228,.045);
+  -webkit-text-stroke: .8px rgba(241,237,228,.68);
+  opacity: 1;
+}

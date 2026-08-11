@@ -1,4 +1,4 @@
-@import url("refinement.css?v=20260811b");
+@import url("refinement.css?v=20260811c");
 
 .experience-section {
   border-top: 1px solid var(--line);
@@ -126,16 +126,6 @@
 .principle-card p {
   margin: 0;
   color: var(--muted);
-}
-
-.credential-year {
-  display: inline-block;
-  margin-top: 1.2rem;
-  padding: .4rem .5rem .32rem;
-  border: 1px solid var(--line-strong);
-  color: var(--signal);
-  font: 700 .66rem/1 var(--mono);
-  letter-spacing: .08em;
 }
 
 .training-list {

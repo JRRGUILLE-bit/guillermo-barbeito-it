@@ -40,6 +40,50 @@
     }
   }
 
+  // Turn project cards into recruiter-friendly evidence: case study first, raw repo second.
+  const projectRoutes = [
+    {
+      repo: 'https://github.com/JRRGUILLE-bit/project-isosceles',
+      local: isEnglish ? 'projects/menelao/' : 'projects/menelao/',
+      label: isEnglish ? 'Read case study' : 'Ver case study'
+    },
+    {
+      repo: 'https://github.com/JRRGUILLE-bit/Foundry',
+      local: isEnglish ? 'projects/foundry/' : 'projects/foundry/',
+      label: isEnglish ? 'Read case study' : 'Ver case study'
+    },
+    {
+      repo: 'https://github.com/JRRGUILLE-bit/jona-logistica',
+      local: isEnglish ? 'projects/jona-logistica/' : 'projects/jona-logistica/',
+      label: isEnglish ? 'Read case study' : 'Ver case study'
+    }
+  ];
+
+  projectRoutes.forEach(({ repo, local, label }) => {
+    document.querySelectorAll(`a[href="${repo}"]`).forEach((repoLink) => {
+      if (repoLink.dataset.caseStudyProcessed === 'true') return;
+      repoLink.dataset.caseStudyProcessed = 'true';
+
+      const caseLink = document.createElement('a');
+      caseLink.className = 'text-link case-study-link';
+      caseLink.href = local;
+      caseLink.innerHTML = `${label} <span>→</span>`;
+
+      repoLink.insertAdjacentElement('beforebegin', caseLink);
+      repoLink.textContent = isEnglish ? 'GitHub repository ↗' : 'Repositorio en GitHub ↗';
+      repoLink.classList.add('repo-secondary-link');
+    });
+  });
+
+  // Make email CTAs actionable when a recruiter clicks them.
+  document.querySelectorAll('a[href^="mailto:gbarbeitor@yahoo.com"]').forEach((link) => {
+    if (link.href.includes('subject=')) return;
+    const subject = isEnglish
+      ? 'IT opportunity - Guillermo Barbeito'
+      : 'Oportunidad IT - Guillermo Barbeito';
+    link.href = `mailto:gbarbeitor@yahoo.com?subject=${encodeURIComponent(subject)}`;
+  });
+
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
 

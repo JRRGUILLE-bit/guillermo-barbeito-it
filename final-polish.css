@@ -24,3 +24,25 @@
     padding-bottom: clamp(4rem, 9vw, 5.5rem);
   }
 }
+
+/* 02 / PROJECT CARD CLEARANCE
+   Keep the architecture microvisual in its own band; titles begin below it. */
+.is-personalized .hiring-project-grid .project-card::before {
+  top: 3.7rem;
+  opacity: .78;
+}
+
+.is-personalized .hiring-project-grid .project-card::after {
+  top: 5.2rem;
+  opacity: .42;
+}
+
+.is-personalized .hiring-project-grid .project-card h3 {
+  margin: 5.65rem 0 .9rem;
+}
+
+@media (max-width: 620px) {
+  .is-personalized .hiring-project-grid .project-card h3 {
+    margin-top: 5.35rem;
+  }
+}

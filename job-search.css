@@ -915,3 +915,94 @@
     margin-top: 1.5rem;
   }
 }
+
+/* STEP 04 — PROFESSIONAL FIT FLOWS
+   Each role family gets a distinct process signal instead of a generic card treatment. */
+.area-grid-hiring .area-card {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  padding: 1.4rem 1.45rem 1.35rem;
+  border-color: rgba(241,237,228,.09);
+  background: linear-gradient(155deg, rgba(18,22,28,.72), rgba(10,12,15,.9));
+}
+
+.area-grid-hiring .area-card::before {
+  position: absolute;
+  top: 4.25rem;
+  left: 1.45rem;
+  right: 1.45rem;
+  color: rgba(241,237,228,.54);
+  font: 700 .59rem/1.4 var(--mono);
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+
+.area-grid-hiring .area-card::after {
+  content: "";
+  position: absolute;
+  top: 5.9rem;
+  left: 1.45rem;
+  right: 1.45rem;
+  height: 1px;
+  opacity: .55;
+}
+
+.area-grid-hiring .area-card:nth-child(1)::before {
+  content: "INCIDENT  01  →  DIAGNOSE  02  →  RESOLVE  03";
+}
+.area-grid-hiring .area-card:nth-child(1)::after {
+  background: linear-gradient(90deg, var(--signal) 0 7%, rgba(112,216,189,.18) 7% 45%, var(--signal) 45% 52%, rgba(112,216,189,.18) 52% 91%, var(--signal) 91% 100%);
+}
+
+.area-grid-hiring .area-card:nth-child(2)::before {
+  content: "NEED  01  →  PRIORITY  02  →  DELIVERY  03";
+}
+.area-grid-hiring .area-card:nth-child(2)::after {
+  background: linear-gradient(90deg, var(--blue) 0 7%, rgba(109,168,216,.18) 7% 45%, var(--blue) 45% 52%, rgba(109,168,216,.18) 52% 91%, var(--blue) 91% 100%);
+}
+
+.area-grid-hiring .area-card:nth-child(3)::before {
+  content: "SYSTEM  01  →  VERIFY  02  →  AUTOMATE  03";
+}
+.area-grid-hiring .area-card:nth-child(3)::after {
+  background: linear-gradient(90deg, var(--accent-bright) 0 7%, rgba(218,59,50,.18) 7% 45%, var(--accent-bright) 45% 52%, rgba(218,59,50,.18) 52% 91%, var(--accent-bright) 91% 100%);
+}
+
+.area-grid-hiring .area-card h3 {
+  margin: 6.3rem 0 1rem;
+  font-size: clamp(1.65rem, 2.5vw, 2.55rem);
+}
+
+.area-grid-hiring .area-card p {
+  line-height: 1.65;
+}
+
+.area-grid-hiring .area-card .card-footer {
+  margin-top: auto;
+  padding-top: 1.8rem;
+  color: rgba(241,237,228,.5);
+  font-size: .59rem;
+  letter-spacing: .12em;
+}
+
+.area-grid-hiring .area-card:nth-child(1) .card-top span:last-child { color: var(--signal); }
+.area-grid-hiring .area-card:nth-child(2) .card-top span:last-child { color: var(--blue); }
+.area-grid-hiring .area-card:nth-child(3) .card-top span:last-child { color: var(--accent-bright); }
+
+.area-grid-hiring .area-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241,237,228,.18);
+  background: linear-gradient(155deg, rgba(22,27,34,.84), rgba(11,13,16,.94));
+}
+
+@media (max-width: 620px) {
+  .area-grid-hiring .area-card::before {
+    font-size: .53rem;
+    letter-spacing: .055em;
+  }
+
+  .area-grid-hiring .area-card h3 {
+    margin-top: 6rem;
+  }
+}

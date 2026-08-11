@@ -1,4 +1,9 @@
 (() => {
+  const heroTitle = document.querySelector('.hero h1');
+  if (heroTitle) {
+    heroTitle.style.letterSpacing = 'normal';
+  }
+
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
 

@@ -49,3 +49,44 @@
     transform: none;
   }
 }
+
+/* STEP 02 — Keep microtype legible and remove decorative noise. */
+.is-personalized .hero-copy::before {
+  display: none;
+}
+
+.is-personalized .eyebrow {
+  font-size: .75rem;
+  letter-spacing: .085em;
+}
+
+.is-personalized .system-head,
+.is-personalized .system-foot {
+  font-size: .64rem;
+  letter-spacing: .095em;
+}
+
+.is-personalized .node span {
+  font-size: .59rem;
+}
+
+.is-personalized .node small {
+  font-size: .64rem;
+  line-height: 1.35;
+}
+
+.is-personalized .core small {
+  font-size: .58rem;
+  line-height: 1.35;
+}
+
+.is-personalized .hero-meta span {
+  font-size: .66rem;
+  letter-spacing: .085em;
+}
+
+.is-personalized .card-top,
+.is-personalized .credential-label,
+.is-personalized .language-row span {
+  letter-spacing: .075em;
+}

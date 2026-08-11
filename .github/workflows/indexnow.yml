@@ -6,9 +6,12 @@ on:
     paths:
       - 'index.html'
       - 'en/index.html'
+      - 'projects/**'
+      - 'en/projects/**'
       - 'styles.css'
       - 'personalization.css'
       - 'job-search.css'
+      - 'case-study.css'
       - 'script.js'
       - 'sitemap.xml'
       - 'robots.txt'
@@ -28,8 +31,6 @@ jobs:
         shell: bash
         run: |
           KEY='84c8cd8d-143b-45f1-9054-1fede0af6250'
-          URL_ES='https://jrrguille-bit.github.io/guillermo-barbeito-it/'
-          URL_EN='https://jrrguille-bit.github.io/guillermo-barbeito-it/en/'
           KEY_LOCATION="https://jrrguille-bit.github.io/guillermo-barbeito-it/${KEY}.txt"
 
           payload=$(cat <<JSON
@@ -37,12 +38,21 @@ jobs:
             "host": "jrrguille-bit.github.io",
             "key": "${KEY}",
             "keyLocation": "${KEY_LOCATION}",
-            "urlList": ["${URL_ES}", "${URL_EN}"]
+            "urlList": [
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/en/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/menelao/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/foundry/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/foundry/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/jona-logistica/",
+              "https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/jona-logistica/"
+            ]
           }
           JSON
           )
 
-          echo "Notifying IndexNow about ${URL_ES} and ${URL_EN}"
+          echo "Notifying IndexNow about portfolio and case-study URLs"
           status=$(curl --silent --show-error --retry 2 --max-time 20 \
             --output /tmp/indexnow-response.txt \
             --write-out '%{http_code}' \

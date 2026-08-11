@@ -1,0 +1,17 @@
+{
+  "name": "Guillermo Barbeito — IT",
+  "short_name": "GB IT",
+  "description": "Perfil técnico de Guillermo Barbeito: soporte, sistemas, producto y automatización.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#0b0d10",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

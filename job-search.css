@@ -128,6 +128,36 @@
   margin-top: auto;
 }
 
+.case-study-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-right: 1rem;
+  color: var(--signal) !important;
+  font-weight: 700;
+}
+
+.repo-secondary-link {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--muted) !important;
+  font-size: .68rem !important;
+  opacity: .82;
+}
+
+.project-copy .case-study-link,
+.project-copy .repo-secondary-link {
+  margin-top: 1.15rem;
+}
+
+.project-copy .repo-secondary-link {
+  margin-left: .85rem;
+}
+
+.hiring-project-grid .case-study-link,
+.hiring-project-grid .repo-secondary-link {
+  margin-top: 1rem;
+}
+
 /* The audiovisual portfolio remains associated in structured data, but it does not
    compete with the IT hiring flow inside this landing page. */
 .contact-line-muted,
@@ -174,5 +204,13 @@
 
   .language-row strong {
     text-align: left;
+  }
+
+  .project-copy .case-study-link,
+  .project-copy .repo-secondary-link,
+  .hiring-project-grid .case-study-link,
+  .hiring-project-grid .repo-secondary-link {
+    display: flex;
+    margin: .75rem 0 0;
   }
 }

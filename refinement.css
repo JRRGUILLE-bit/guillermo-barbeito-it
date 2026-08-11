@@ -226,3 +226,21 @@
     margin-left: 0;
   }
 }
+
+/* STEP 07 — Editorial name composition with natural letter spacing. */
+.is-personalized .hero h1 {
+  letter-spacing: normal !important;
+  line-height: .82;
+}
+
+.is-personalized .hero h1 span {
+  display: inline-block;
+  font-size: .92em;
+  transform-origin: left center;
+}
+
+@media (max-width: 620px) {
+  .is-personalized .hero h1 span {
+    font-size: .94em;
+  }
+}

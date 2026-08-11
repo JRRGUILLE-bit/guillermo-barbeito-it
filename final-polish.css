@@ -46,3 +46,34 @@
     margin-top: 5.35rem;
   }
 }
+
+/* 03 / EXPERIENCE MICROTYPE
+   Secondary information stays secondary, but no longer requires effort to read. */
+.is-personalized .experience-date {
+  font-size: .69rem;
+  letter-spacing: .095em;
+  opacity: .78;
+}
+
+.is-personalized .experience-company span {
+  color: rgba(112,216,189,.84);
+  font-size: .63rem;
+  opacity: .92;
+}
+
+.is-personalized .experience-title {
+  font-size: .78rem;
+}
+
+.is-personalized .experience-side .credential-label {
+  color: rgba(158,163,170,.72);
+  font-size: .61rem;
+}
+
+.is-personalized .experience-side .credential-year {
+  font-size: .61rem;
+}
+
+.is-personalized .experience-side .training-list span {
+  font-size: .58rem;
+}

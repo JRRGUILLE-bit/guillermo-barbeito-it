@@ -41,6 +41,8 @@ Repo: https://github.com/JRRGUILLE-bit/jona-logistica
 
 - `index.html` — versión principal en español, metadata social, SEO y datos estructurados.
 - `en/index.html` — versión inglesa orientada a búsquedas y postulaciones internacionales.
+- `Guillermo_Barbeito_CV_IT_2026.pdf` — CV técnico en español.
+- `Guillermo_Barbeito_CV_IT_2026_EN.pdf` — resume técnico en inglés.
 - `styles.css` / `personalization.css` / `job-search.css` — identidad visual y responsive compartida.
 - `script.js` — navegación móvil, reveal progresivo, sección activa y selector de idioma.
 - `robots.txt` / `sitemap.xml` — crawling, indexación y relación hreflang ES/EN.

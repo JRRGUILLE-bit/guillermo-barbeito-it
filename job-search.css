@@ -46,6 +46,24 @@
   border-bottom-color: var(--line-strong);
 }
 
+.nav-lang {
+  min-width: 2.3rem;
+  text-align: center;
+  color: var(--signal) !important;
+}
+
+.footer-language {
+  color: var(--signal);
+  font: 700 .62rem/1 var(--mono);
+  letter-spacing: .09em;
+  text-decoration: none;
+}
+
+.footer-language:hover,
+.footer-language:focus-visible {
+  color: var(--ink);
+}
+
 .area-grid-hiring {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -110,10 +128,10 @@
   margin-top: auto;
 }
 
-/* El portfolio audiovisual sigue asociado en datos estructurados, pero no compite
-   con la conversión del recruiter dentro de esta landing IT. */
+/* The audiovisual portfolio remains associated in structured data, but it does not
+   compete with the IT hiring flow inside this landing page. */
 .contact-line-muted,
-.site-footer .footer-link {
+.site-footer .footer-link:not(.footer-language) {
   display: none;
 }
 

@@ -182,3 +182,47 @@
 .is-personalized .project-feature {
   border-color: rgba(241,237,228,.18);
 }
+
+/* STEP 06 — One primary action, one secondary action, one editorial link. */
+.is-personalized .hero-actions {
+  gap: .9rem;
+}
+
+.is-personalized .hero-actions .button-primary {
+  min-width: 188px;
+  padding-inline: 1.2rem;
+  box-shadow: 0 12px 32px rgba(218,59,50,.1);
+}
+
+.is-personalized .hero-actions .button-ghost {
+  border-color: rgba(241,237,228,.2);
+  color: #d3d0c9;
+  background: transparent;
+}
+
+.is-personalized .hero-actions .button-ghost:hover,
+.is-personalized .hero-actions .button-ghost:focus-visible {
+  border-color: rgba(112,216,189,.38);
+  background: rgba(112,216,189,.045);
+}
+
+.is-personalized .hero-project-link {
+  position: relative;
+  margin-left: .65rem;
+  padding: .72rem 0 .5rem;
+  border-bottom: 1px solid rgba(241,237,228,.14);
+  color: #aaa9a5;
+  letter-spacing: .035em;
+}
+
+.is-personalized .hero-project-link:hover,
+.is-personalized .hero-project-link:focus-visible {
+  color: var(--ink);
+  border-bottom-color: rgba(112,216,189,.55);
+}
+
+@media (max-width: 620px) {
+  .is-personalized .hero-project-link {
+    margin-left: 0;
+  }
+}

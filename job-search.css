@@ -809,3 +809,109 @@
     opacity: .7;
   }
 }
+
+/* STEP 03 — PROFILE PORTRAIT
+   Treat the portrait as editorial evidence rather than a separate card. */
+.profile-copy .lead {
+  max-width: 900px;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.profile-detail-grid {
+  grid-template-columns: minmax(0, 1.22fr) minmax(300px, .78fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: center;
+}
+
+.profile-detail-grid .profile-columns {
+  position: relative;
+  max-width: 760px;
+  gap: 1.8rem;
+  padding-left: 1.4rem;
+}
+
+.profile-detail-grid .profile-columns::before {
+  content: "";
+  position: absolute;
+  top: .2rem;
+  bottom: .2rem;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(var(--accent), rgba(218,59,50,.06));
+}
+
+.profile-detail-grid .profile-columns p:first-child {
+  color: #cbc8c1;
+  font-size: clamp(1.04rem, 1.35vw, 1.18rem);
+}
+
+.profile-photo-card {
+  width: min(100%, 390px);
+  justify-self: end;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.profile-photo-card::before {
+  content: "PORTRAIT / GB-01";
+  position: absolute;
+  z-index: 3;
+  top: -1.8rem;
+  left: 0;
+  color: rgba(241,237,228,.38);
+  font: 700 .58rem/1 var(--mono);
+  letter-spacing: .14em;
+}
+
+.profile-photo-card::after {
+  inset: 0;
+  border: 1px solid rgba(241,237,228,.13);
+  background:
+    linear-gradient(180deg, transparent 54%, rgba(11,13,16,.9) 100%),
+    linear-gradient(90deg, rgba(218,59,50,.08), transparent 38%);
+  box-shadow:
+    -18px 18px 0 -17px rgba(218,59,50,.74),
+    20px -20px 0 -19px rgba(109,168,216,.62);
+}
+
+.profile-photo-card img {
+  aspect-ratio: 3 / 4;
+  object-position: center 20%;
+  filter: saturate(.7) contrast(1.045) brightness(.94);
+}
+
+.profile-photo-card figcaption {
+  left: 1rem;
+  right: 1rem;
+  bottom: .85rem;
+  padding-top: .65rem;
+  border-top: 1px solid rgba(241,237,228,.16);
+  color: rgba(241,237,228,.76);
+  font-size: .56rem;
+  letter-spacing: .11em;
+}
+
+.profile-photo-card figcaption span:last-child {
+  color: var(--signal);
+}
+
+@media (max-width: 1020px) {
+  .profile-detail-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .profile-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo-card {
+    width: min(82vw, 360px);
+    justify-self: start;
+    margin-top: 1.5rem;
+  }
+}

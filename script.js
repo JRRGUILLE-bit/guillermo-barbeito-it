@@ -32,6 +32,28 @@
       `;
     }
 
+    const cvPath = 'Guillermo_Barbeito_CV_IT_2026.pdf';
+    const heroActions = document.querySelector('.hero-actions');
+    if (heroActions && !heroActions.querySelector('[data-cv-download]')) {
+      const cvButton = document.createElement('a');
+      cvButton.className = 'button button-ghost';
+      cvButton.href = cvPath;
+      cvButton.download = 'Guillermo_Barbeito_CV_IT_2026.pdf';
+      cvButton.dataset.cvDownload = 'true';
+      cvButton.innerHTML = 'Descargar CV <span aria-hidden="true">↓</span>';
+      heroActions.appendChild(cvButton);
+    }
+
+    const navAlt = document.querySelector('.site-nav .nav-alt');
+    if (navAlt && !document.querySelector('.site-nav [data-cv-download]')) {
+      const cvNav = document.createElement('a');
+      cvNav.href = cvPath;
+      cvNav.download = 'Guillermo_Barbeito_CV_IT_2026.pdf';
+      cvNav.dataset.cvDownload = 'true';
+      cvNav.textContent = 'CV ↓';
+      navAlt.insertAdjacentElement('beforebegin', cvNav);
+    }
+
     const systemHeadLabel = document.querySelector('.system-head > span:first-child');
     if (systemHeadLabel) systemHeadLabel.textContent = 'GB / TECHNICAL OPERATIONS PROFILE';
 

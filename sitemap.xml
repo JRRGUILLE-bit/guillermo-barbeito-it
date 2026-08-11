@@ -19,4 +19,61 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/" />
   </url>
+
+  <url>
+    <loc>https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/menelao/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/" />
+  </url>
+  <url>
+    <loc>https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/menelao/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/menelao/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/menelao/" />
+  </url>
+
+  <url>
+    <loc>https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/foundry/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/foundry/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/foundry/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/foundry/" />
+  </url>
+  <url>
+    <loc>https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/foundry/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/foundry/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/foundry/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/foundry/" />
+  </url>
+
+  <url>
+    <loc>https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/jona-logistica/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/jona-logistica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/jona-logistica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/jona-logistica/" />
+  </url>
+  <url>
+    <loc>https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/jona-logistica/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/jona-logistica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/en/projects/jona-logistica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jrrguille-bit.github.io/guillermo-barbeito-it/projects/jona-logistica/" />
+  </url>
 </urlset>

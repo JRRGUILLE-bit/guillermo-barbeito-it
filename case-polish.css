@@ -182,3 +182,127 @@
     border-right: 1px solid rgba(241,237,228,.1);
   }
 }
+
+/* STEP 09 — TECHNICAL SIDEBAR SHEET
+   One continuous hiring/evidence sheet rather than separate dashboard cards. */
+.case-side {
+  position: sticky;
+  top: 92px;
+  display: block;
+  border-top: 1px solid rgba(241,237,228,.16);
+  border-bottom: 1px solid rgba(241,237,228,.16);
+  background: linear-gradient(180deg, rgba(15,18,23,.64), rgba(9,11,14,.42));
+}
+
+.case-side::before {
+  content: "TECHNICAL / HIRING SIGNAL";
+  display: block;
+  padding: .75rem 1.1rem .65rem;
+  border-bottom: 1px solid rgba(241,237,228,.08);
+  color: rgba(158,163,170,.58);
+  font: 700 .54rem/1 var(--mono);
+  letter-spacing: .15em;
+}
+
+.case-side-card {
+  padding: 1.35rem 1.1rem 1.4rem;
+  border: 0;
+  border-bottom: 1px solid rgba(241,237,228,.08);
+  background: transparent;
+}
+
+.case-side-card:last-child {
+  border-bottom: 0;
+}
+
+.case-side-card + .case-side-card {
+  margin-top: 0;
+}
+
+.case-side-label {
+  padding-bottom: .75rem;
+  border-bottom: 0;
+  color: rgba(158,163,170,.6);
+  font-size: .55rem;
+  letter-spacing: .13em;
+}
+
+.case-side-label span:last-child {
+  color: rgba(112,216,189,.72);
+}
+
+.case-side-card h3 {
+  margin: 1.2rem 0 .75rem;
+  color: #d8d4cc;
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+}
+
+.case-side-card p {
+  color: rgba(158,163,170,.86);
+  font-size: .82rem;
+  line-height: 1.62;
+}
+
+.case-side-links {
+  margin-top: 1.25rem;
+}
+
+.case-side-links a {
+  position: relative;
+  padding: .78rem 1.1rem .72rem 0;
+  border-top-color: rgba(241,237,228,.08);
+  color: rgba(241,237,228,.8);
+  font-size: .62rem;
+  letter-spacing: .05em;
+}
+
+.case-side-links a::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  color: var(--signal);
+}
+
+.case-side-links a:hover,
+.case-side-links a:focus-visible {
+  color: var(--ink);
+}
+
+.case-side-links a:hover::after,
+.case-side-links a:focus-visible::after {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .case-side {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(241,237,228,.1);
+  }
+
+  .case-side::before {
+    grid-column: 1 / -1;
+  }
+
+  .case-side-card {
+    border-bottom: 0;
+    border-right: 1px solid rgba(241,237,228,.08);
+  }
+
+  .case-side-card:last-child {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .case-side {
+    grid-template-columns: 1fr;
+  }
+
+  .case-side-card {
+    border-right: 0;
+    border-bottom: 1px solid rgba(241,237,228,.08);
+  }
+}

@@ -266,3 +266,82 @@ body.is-personalized::after {
 .is-personalized .stack-board {
   isolation: isolate;
 }
+
+/* STEP 10 — Distinct reading rhythm for experience and verified work. */
+.is-personalized .experience-timeline::before {
+  opacity: .42;
+}
+
+.is-personalized .experience-role {
+  padding: 1.7rem 0;
+  border-bottom-color: rgba(241,237,228,.075);
+}
+
+.is-personalized .experience-role:first-child {
+  border-top-color: rgba(241,237,228,.075);
+}
+
+.is-personalized .experience-date {
+  opacity: .66;
+  font-size: .65rem;
+}
+
+.is-personalized .experience-company strong {
+  font-size: clamp(1.55rem, 2.45vw, 2.4rem);
+  letter-spacing: -.02em;
+}
+
+.is-personalized .experience-company span {
+  font-size: .59rem;
+  opacity: .82;
+}
+
+.is-personalized .experience-title {
+  margin-bottom: .5rem;
+}
+
+.is-personalized .experience-role p:last-child {
+  max-width: 680px;
+  line-height: 1.68;
+}
+
+.is-personalized .hiring-project-grid {
+  gap: 1.35rem;
+  margin-top: 1.35rem;
+}
+
+.is-personalized .hiring-project-grid .project-card {
+  min-height: 285px;
+  padding: 1.35rem;
+}
+
+.is-personalized .hiring-project-grid .project-card h3 {
+  margin: 2.35rem 0 .9rem;
+  font-size: clamp(1.6rem, 2.35vw, 2.25rem);
+}
+
+.is-personalized .hiring-project-grid .card-top {
+  opacity: .64;
+}
+
+.is-personalized .project-feature {
+  min-height: 560px;
+}
+
+.is-personalized .project-diagram {
+  min-height: 520px;
+}
+
+.is-personalized .project-copy {
+  padding: clamp(2.5rem, 4.5vw, 4.5rem);
+}
+
+@media (max-width: 860px) {
+  .is-personalized .experience-role {
+    padding-block: 1.45rem;
+  }
+
+  .is-personalized .hiring-project-grid .project-card {
+    min-height: 0;
+  }
+}

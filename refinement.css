@@ -251,3 +251,18 @@
   -webkit-text-stroke: .8px rgba(241,237,228,.68);
   opacity: 1;
 }
+
+/* STEP 09 — Reserve technical texture for technical surfaces. */
+body.is-personalized::before {
+  opacity: .46;
+}
+
+body.is-personalized::after {
+  opacity: .016;
+}
+
+.is-personalized .hero-system,
+.is-personalized .project-diagram,
+.is-personalized .stack-board {
+  isolation: isolate;
+}

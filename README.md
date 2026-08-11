@@ -2,8 +2,10 @@
 
 Perfil técnico público de Guillermo Barbeito, Ingeniero en Informática en Montevideo, Uruguay.
 
-**Portfolio:** https://jrrguille-bit.github.io/guillermo-barbeito-it/  
-**CV técnico:** https://jrrguille-bit.github.io/guillermo-barbeito-it/Guillermo_Barbeito_CV_IT_2026.pdf  
+**Portfolio ES:** https://jrrguille-bit.github.io/guillermo-barbeito-it/  
+**Portfolio EN:** https://jrrguille-bit.github.io/guillermo-barbeito-it/en/  
+**CV técnico ES:** https://jrrguille-bit.github.io/guillermo-barbeito-it/Guillermo_Barbeito_CV_IT_2026.pdf  
+**CV técnico EN:** https://jrrguille-bit.github.io/guillermo-barbeito-it/Guillermo_Barbeito_CV_IT_2026_EN.pdf  
 **LinkedIn:** https://www.linkedin.com/in/guillermo-barbeito-040632340/
 
 ## Roles y foco
@@ -37,14 +39,13 @@ Repo: https://github.com/JRRGUILLE-bit/jona-logistica
 
 ## Sitio
 
-- `index.html` — contenido, metadata social, SEO y datos estructurados.
-- `styles.css` / `personalization.css` / `job-search.css` — identidad visual y responsive.
-- `script.js` — navegación móvil, reveal progresivo y sección activa.
-- `robots.txt` / `sitemap.xml` — crawling e indexación.
-- `.github/workflows/indexnow.yml` — notificación no bloqueante de cambios a IndexNow.
+- `index.html` — versión principal en español, metadata social, SEO y datos estructurados.
+- `en/index.html` — versión inglesa orientada a búsquedas y postulaciones internacionales.
+- `styles.css` / `personalization.css` / `job-search.css` — identidad visual y responsive compartida.
+- `script.js` — navegación móvil, reveal progresivo, sección activa y selector de idioma.
+- `robots.txt` / `sitemap.xml` — crawling, indexación y relación hreflang ES/EN.
+- `.github/workflows/indexnow.yml` — notificación no bloqueante de ambas URLs a IndexNow.
 
 ## Criterio editorial
 
 El portfolio IT está separado del perfil audiovisual. El contenido técnico se apoya en experiencia profesional y proyectos verificables; no se agregan cargos, fechas, certificaciones o tecnologías sin respaldo.
-
-**Portfolio audiovisual:** https://jrrguille-bit.github.io/guillermo-barbeito/

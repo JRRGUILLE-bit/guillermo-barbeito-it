@@ -77,3 +77,15 @@
 .is-personalized .experience-side .training-list span {
   font-size: .58rem;
 }
+
+/* 04 / PORTRAIT PRESENCE
+   Keep the editorial treatment but let the human subject read before the overlay. */
+.is-personalized .profile-photo-card img {
+  filter: saturate(.82) contrast(1.055) brightness(1.035);
+}
+
+.is-personalized .profile-photo-card::after {
+  background:
+    linear-gradient(180deg, transparent 64%, rgba(11,13,16,.72) 100%),
+    linear-gradient(90deg, rgba(218,59,50,.045), transparent 42%);
+}

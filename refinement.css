@@ -1,0 +1,51 @@
+/* SECOND-PASS ART DIRECTION
+   Editorial restraint over interface density. Home portfolio only. */
+
+/* STEP 01 — Reduce the technical panel's visual dominance. */
+.is-personalized .hero {
+  grid-template-columns: minmax(0, 1.1fr) minmax(390px, .82fr);
+  column-gap: clamp(2.8rem, 5vw, 6.5rem);
+}
+
+.is-personalized .hero-system {
+  min-height: 590px;
+  margin: clamp(3.1rem, 6vh, 5rem) 0;
+  opacity: .88;
+  border-color: rgba(241,237,228,.13);
+  box-shadow: inset 0 0 0 1px rgba(109,168,216,.018), 0 26px 72px rgba(0,0,0,.14);
+}
+
+.is-personalized .hero-system::before,
+.is-personalized .hero-system::after {
+  opacity: .72;
+}
+
+.is-personalized .system-map path {
+  stroke-opacity: .68;
+}
+
+.is-personalized .node {
+  opacity: .88;
+}
+
+.is-personalized .core {
+  transform: translate(-50%, -50%) scale(.94);
+}
+
+@media (max-width: 1120px) {
+  .is-personalized .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .is-personalized .hero-system {
+    width: min(100%, 780px);
+    justify-self: center;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .is-personalized .core {
+    transform: none;
+  }
+}

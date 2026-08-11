@@ -1,4 +1,20 @@
 (() => {
+  // Normalize ProfilePage dateModified to the DateTime format expected by Google.
+  document.querySelectorAll('script[type="application/ld+json"]').forEach((schemaScript) => {
+    try {
+      const data = JSON.parse(schemaScript.textContent);
+      const graph = Array.isArray(data['@graph']) ? data['@graph'] : [];
+      const profilePage = graph.find((item) => item && item['@type'] === 'ProfilePage');
+
+      if (profilePage && profilePage.dateModified === '2026-08-11') {
+        profilePage.dateModified = '2026-08-11T06:23:00-03:00';
+        schemaScript.textContent = JSON.stringify(data);
+      }
+    } catch (_) {
+      // Leave unrelated or malformed JSON-LD untouched.
+    }
+  });
+
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
 

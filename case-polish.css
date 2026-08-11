@@ -459,3 +459,80 @@
     grid-row: 2;
   }
 }
+
+/* STEP 11 — RESTRAINED MICROINTERACTIONS
+   Motion only reinforces hierarchy; it never carries essential information. */
+.case-header-inner::after,
+.case-proof,
+.case-proof::after,
+.case-related-card,
+.case-related-card::before,
+.case-side-links a::after {
+  transition-duration: .22s;
+  transition-timing-function: ease;
+}
+
+.case-header-inner::after {
+  transition-property: transform, border-color, box-shadow;
+}
+
+.case-header:hover .case-header-inner::after {
+  transform: translateY(-2px);
+  box-shadow: 0 38px 86px rgba(0,0,0,.2);
+}
+
+.case-menelao .case-header:hover .case-header-inner::after {
+  border-color: rgba(112,216,189,.3);
+}
+
+.case-foundry .case-header:hover .case-header-inner::after {
+  border-color: rgba(109,168,216,.3);
+}
+
+.case-jona .case-header:hover .case-header-inner::after {
+  border-color: rgba(218,59,50,.28);
+}
+
+.case-proof {
+  transition-property: background, transform;
+}
+
+.case-proof::after {
+  transition-property: width, opacity;
+}
+
+.case-proof:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(150deg, rgba(22,27,34,.7), rgba(10,12,15,.9));
+}
+
+.case-proof:hover::after {
+  width: 78px;
+  opacity: .9;
+}
+
+.case-related-card::before {
+  transition-property: width, opacity;
+}
+
+.case-related-card:hover::before,
+.case-related-card:focus-visible::before {
+  width: 118px;
+  opacity: .86;
+}
+
+.case-side-links a::after {
+  transition-property: transform, color;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-header-inner::after,
+  .case-proof,
+  .case-proof::after,
+  .case-related-card,
+  .case-related-card::before,
+  .case-side-links a::after {
+    transition: none !important;
+    transform: none !important;
+  }
+}

@@ -90,3 +90,30 @@
 .is-personalized .language-row span {
   letter-spacing: .075em;
 }
+
+/* STEP 03 — Raise contrast only where reading affects hiring decisions. */
+.is-personalized .hero-summary {
+  color: #b8b7b2;
+}
+
+.is-personalized .profile-columns,
+.is-personalized .profile-columns p {
+  color: #b5b4af;
+}
+
+.is-personalized .section-heading > p {
+  color: #b0b0ac;
+}
+
+.is-personalized .area-card p,
+.is-personalized .project-card p,
+.is-personalized .experience-role p:last-child,
+.is-personalized .credential-card p,
+.is-personalized .language-row strong,
+.is-personalized .contact-copy > p {
+  color: #aeada8;
+}
+
+.is-personalized .project-copy > p:not(.project-role) {
+  color: #d7d3cb;
+}

@@ -536,3 +536,416 @@
     transform: none !important;
   }
 }
+
+/* STEP 12 — CASCADE HARDENING + MOBILE
+   Imported polish must outrank the base stylesheet and stay compact on touch screens. */
+.case-page .case-section-index {
+  margin-bottom: 1.25rem;
+  color: var(--accent-bright);
+  font-size: .62rem;
+  letter-spacing: .15em;
+}
+
+.case-page .case-section h2 {
+  max-width: 720px;
+  margin-bottom: 1.8rem;
+  font-size: clamp(2.3rem, 4.6vw, 4.15rem);
+  line-height: .98;
+}
+
+.case-page .case-section h3 {
+  margin-top: 2.5rem;
+  padding-left: .8rem;
+  border-left: 2px solid rgba(109,168,216,.45);
+  color: #d8d4cc;
+  font-size: 1.05rem;
+  letter-spacing: .05em;
+}
+
+.case-page .case-callout {
+  max-width: 760px;
+  margin: 2.3rem 0;
+  padding: 1.15rem 1.25rem 1.15rem 1.35rem;
+  border: 0;
+  border-left: 2px solid rgba(112,216,189,.65);
+  background: linear-gradient(90deg, rgba(112,216,189,.06), transparent 86%);
+}
+
+.case-page .case-callout span {
+  margin-bottom: .7rem;
+  font-size: .58rem;
+  letter-spacing: .14em;
+}
+
+.case-page .case-callout p {
+  color: #c9cfcb;
+  font-size: .95rem;
+  line-height: 1.65;
+}
+
+.case-page .case-proof-grid {
+  gap: 1px;
+  max-width: 780px;
+  margin-top: 2.2rem;
+  border-top: 1px solid rgba(241,237,228,.1);
+  border-left: 1px solid rgba(241,237,228,.1);
+  background: rgba(241,237,228,.07);
+}
+
+.case-page .case-proof {
+  min-height: 175px;
+  padding: 1.2rem;
+  border: 0;
+  border-right: 1px solid rgba(241,237,228,.1);
+  border-bottom: 1px solid rgba(241,237,228,.1);
+  background: linear-gradient(150deg, rgba(18,22,28,.56), rgba(10,12,15,.82));
+}
+
+.case-page .case-proof span {
+  color: rgba(112,216,189,.76);
+  font-size: .57rem;
+  letter-spacing: .12em;
+}
+
+.case-page .case-proof strong {
+  margin: 2.05rem 0 .6rem;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  letter-spacing: -.025em;
+  text-transform: none;
+}
+
+.case-page .case-proof p {
+  color: rgba(158,163,170,.88);
+  font-size: .84rem;
+  line-height: 1.58;
+}
+
+.case-page .case-side {
+  top: 92px;
+  display: block;
+  border-top: 1px solid rgba(241,237,228,.16);
+  border-bottom: 1px solid rgba(241,237,228,.16);
+  background: linear-gradient(180deg, rgba(15,18,23,.64), rgba(9,11,14,.42));
+}
+
+.case-page .case-side-card {
+  padding: 1.35rem 1.1rem 1.4rem;
+  border: 0;
+  border-bottom: 1px solid rgba(241,237,228,.08);
+  background: transparent;
+}
+
+.case-page .case-side-card + .case-side-card {
+  margin-top: 0;
+}
+
+.case-page .case-side-label {
+  padding-bottom: .75rem;
+  border-bottom: 0;
+  color: rgba(158,163,170,.6);
+  font-size: .55rem;
+  letter-spacing: .13em;
+}
+
+.case-page .case-side-card h3 {
+  margin: 1.2rem 0 .75rem;
+  color: #d8d4cc;
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+}
+
+.case-page .case-side-card p {
+  color: rgba(158,163,170,.86);
+  font-size: .82rem;
+  line-height: 1.62;
+}
+
+.case-page .case-side-links a {
+  padding: .78rem 1.1rem .72rem 0;
+  border-top-color: rgba(241,237,228,.08);
+  color: rgba(241,237,228,.8);
+  font-size: .62rem;
+  letter-spacing: .05em;
+}
+
+.case-page .case-related {
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+  border-top-color: rgba(241,237,228,.12);
+}
+
+.case-page .case-related > h2 {
+  max-width: 720px;
+  margin-bottom: 2.6rem;
+  font-size: clamp(2.3rem, 4.5vw, 4.1rem);
+}
+
+.case-page .case-related-grid {
+  gap: 1px;
+  border-top: 1px solid rgba(241,237,228,.1);
+  border-left: 1px solid rgba(241,237,228,.1);
+  background: rgba(241,237,228,.06);
+}
+
+.case-page .case-related-card {
+  min-height: 250px;
+  padding: 1.4rem;
+  border: 0;
+  border-right: 1px solid rgba(241,237,228,.1);
+  border-bottom: 1px solid rgba(241,237,228,.1);
+  background: linear-gradient(150deg, rgba(17,21,27,.62), rgba(9,11,14,.88));
+}
+
+.case-page .case-related-card span {
+  color: rgba(158,163,170,.72);
+  font-size: .57rem;
+  letter-spacing: .13em;
+}
+
+.case-page .case-related-card strong {
+  max-width: 88%;
+  font-size: clamp(1.65rem, 3vw, 2.65rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.case-page .case-related-card small {
+  color: rgba(158,163,170,.84);
+  font-size: .82rem;
+}
+
+.case-page .case-hire {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: end;
+  margin-top: clamp(5rem, 8vw, 7rem);
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 0;
+  border: 0;
+  border-top: 1px solid rgba(241,237,228,.16);
+  background: transparent;
+}
+
+.case-page .case-hire h2 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.55rem, 5.3vw, 5rem);
+  line-height: .92;
+  letter-spacing: -.055em;
+}
+
+.case-page .case-hire p {
+  grid-column: 1;
+  max-width: 700px;
+  margin: 1.1rem 0 0;
+  color: rgba(158,163,170,.9);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.case-page .case-hire .case-actions {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .case-page .case-side {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(241,237,228,.1);
+  }
+
+  .case-page .case-side-card {
+    border-bottom: 0;
+    border-right: 1px solid rgba(241,237,228,.08);
+  }
+
+  .case-page .case-side-card:last-child {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .case-page .case-hire {
+    grid-template-columns: 1fr;
+  }
+
+  .case-page .case-hire p,
+  .case-page .case-hire .case-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .case-page .case-hire .case-actions {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .case-page {
+    overflow-x: clip;
+  }
+
+  .case-page .case-header {
+    padding: 5.7rem 1rem 3.2rem;
+  }
+
+  .case-page .case-breadcrumbs {
+    gap: .42rem;
+    margin-bottom: 1.6rem;
+    font-size: .56rem;
+    letter-spacing: .045em;
+  }
+
+  .case-page .case-kicker {
+    font-size: .62rem;
+    line-height: 1.35;
+  }
+
+  .case-page .case-title {
+    max-width: 100%;
+    font-size: clamp(2.7rem, 14vw, 4.25rem);
+    line-height: .88;
+    overflow-wrap: anywhere;
+  }
+
+  .case-page .case-deck {
+    margin-top: 1.45rem;
+    font-size: 1.05rem;
+    line-height: 1.48;
+  }
+
+  .case-page .case-header-inner::after {
+    min-height: 245px;
+    margin-top: 1.8rem;
+    padding: .8rem;
+    overflow: hidden;
+    font-size: .54rem;
+    line-height: 1.68;
+    letter-spacing: .045em;
+  }
+
+  .case-page .case-summary-grid {
+    grid-template-columns: 1fr;
+    margin-top: .9rem;
+  }
+
+  .case-page .case-summary-grid > div {
+    padding: .85rem .9rem;
+  }
+
+  .case-page .case-header .case-actions {
+    width: 100%;
+    margin-top: 1.1rem;
+  }
+
+  .case-page .case-header .case-actions .button,
+  .case-page .case-hire .case-actions .button {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .case-page .case-body {
+    gap: 3.5rem;
+    padding: 4.5rem 1rem;
+  }
+
+  .case-page .case-content .case-section {
+    padding-right: 0;
+    padding-bottom: 3.7rem;
+  }
+
+  .case-page .case-content .case-section + .case-section {
+    padding-top: 3.7rem;
+  }
+
+  .case-page .case-content .case-section::before {
+    right: -.05rem;
+    font-size: 5.3rem;
+  }
+
+  .case-page .case-section h2 {
+    max-width: 100%;
+    margin-bottom: 1.45rem;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .case-page .case-section h2 + p {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .case-page .case-section p,
+  .case-page .case-section li {
+    font-size: .95rem;
+    line-height: 1.68;
+  }
+
+  .case-page .case-callout {
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .case-page .case-proof-grid {
+    grid-template-columns: 1fr;
+    border-right: 1px solid rgba(241,237,228,.1);
+  }
+
+  .case-page .case-proof {
+    min-height: 145px;
+  }
+
+  .case-page .case-side {
+    grid-template-columns: 1fr;
+  }
+
+  .case-page .case-side-card {
+    border-right: 0;
+    border-bottom: 1px solid rgba(241,237,228,.08);
+  }
+
+  .case-page .case-related {
+    padding: 4.5rem 1rem;
+  }
+
+  .case-page .case-related-grid {
+    grid-template-columns: 1fr;
+    border-right: 1px solid rgba(241,237,228,.1);
+  }
+
+  .case-page .case-related-card {
+    min-height: 190px;
+  }
+
+  .case-page .case-hire {
+    margin-top: 4.5rem;
+    padding-top: 2.7rem;
+  }
+
+  .case-page .case-hire::before {
+    position: static;
+    grid-row: 1;
+  }
+
+  .case-page .case-hire h2 {
+    grid-row: 2;
+    font-size: clamp(2.25rem, 11vw, 3.4rem);
+  }
+
+  .case-page .case-footer-inner {
+    padding-inline: 1rem;
+  }
+}
+
+@media (hover: none) {
+  .case-page .case-header:hover .case-header-inner::after,
+  .case-page .case-proof:hover,
+  .case-page .case-related-card:hover {
+    transform: none;
+  }
+}

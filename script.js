@@ -1,5 +1,8 @@
 (() => {
-  // Normalize ProfilePage dateModified to the DateTime format expected by Google.
+  const pageLang = (document.documentElement.lang || '').toLowerCase();
+  const isEnglish = pageLang.startsWith('en');
+
+  // Normalize the Spanish ProfilePage dateModified value to the DateTime format expected by Google.
   document.querySelectorAll('script[type="application/ld+json"]').forEach((schemaScript) => {
     try {
       const data = JSON.parse(schemaScript.textContent);
@@ -14,6 +17,28 @@
       // Leave unrelated or malformed JSON-LD untouched.
     }
   });
+
+  // Keep both language versions connected for users and search engines.
+  if (!isEnglish) {
+    if (!document.querySelector('link[rel="alternate"][hreflang="en"]')) {
+      const enAlternate = document.createElement('link');
+      enAlternate.rel = 'alternate';
+      enAlternate.hreflang = 'en';
+      enAlternate.href = 'https://jrrguille-bit.github.io/guillermo-barbeito-it/en/';
+      document.head.appendChild(enAlternate);
+    }
+
+    const nav = document.querySelector('.site-nav');
+    const cvLink = nav?.querySelector('.nav-cv');
+    if (nav && cvLink && !nav.querySelector('.nav-lang')) {
+      const langLink = document.createElement('a');
+      langLink.className = 'nav-lang';
+      langLink.href = 'en/';
+      langLink.lang = 'en';
+      langLink.textContent = 'EN';
+      cvLink.insertAdjacentElement('beforebegin', langLink);
+    }
+  }
 
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');

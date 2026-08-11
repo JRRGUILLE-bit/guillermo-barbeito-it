@@ -40,18 +40,18 @@ body.is-personalized::after {
   opacity: .012;
 }
 
-main > section {
+body.is-personalized main > section {
   position: relative;
   isolation: isolate;
 }
 
-main > section > * {
+body.is-personalized main > section > * {
   position: relative;
   z-index: 1;
 }
 
 /* Structural map layer. Its low-opacity strokes are already encoded in the SVGs. */
-main > section::before {
+body.is-personalized main > section::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -69,7 +69,7 @@ main > section::before {
 }
 
 /* Alternating technical maps + local lighting zones. */
-:is(#inicio, #home)::before {
+body.is-personalized :is(#inicio, #home)::before {
   --bg-glow-position: 18% 42%;
   --bg-map-position: 52% 16%;
   background-image:
@@ -78,7 +78,7 @@ main > section::before {
   opacity: .73;
 }
 
-:is(#perfil, #profile)::before {
+body.is-personalized :is(#perfil, #profile)::before {
   --bg-glow-position: 83% 36%;
   --bg-map-position: 48% 42%;
   background-image:
@@ -86,7 +86,7 @@ main > section::before {
     url("assets/background-structure-b.svg");
 }
 
-#areas::before {
+body.is-personalized #areas::before {
   --bg-glow-position: 16% 58%;
   --bg-map-position: 52% 54%;
   background-image:
@@ -95,7 +95,7 @@ main > section::before {
   opacity: .58;
 }
 
-:is(#experiencia, #experience)::before {
+body.is-personalized :is(#experiencia, #experience)::before {
   --bg-glow-position: 86% 38%;
   --bg-map-position: 47% 48%;
   background-image:
@@ -104,7 +104,7 @@ main > section::before {
   opacity: .60;
 }
 
-:is(#proyectos, #projects)::before {
+body.is-personalized :is(#proyectos, #projects)::before {
   --bg-glow-position: 78% 66%;
   --bg-map-position: 52% 46%;
   background-image:
@@ -113,7 +113,7 @@ main > section::before {
   opacity: .65;
 }
 
-#stack::before {
+body.is-personalized #stack::before {
   --bg-glow-position: 17% 44%;
   --bg-map-position: 48% 50%;
   background-image:
@@ -122,7 +122,7 @@ main > section::before {
   opacity: .54;
 }
 
-:is(#contacto, #contact)::before {
+body.is-personalized :is(#contacto, #contact)::before {
   --bg-glow-position: 78% 50%;
   --bg-map-position: 51% 72%;
   background-image:
@@ -132,12 +132,12 @@ main > section::before {
 }
 
 /* Large ghost section coordinates. Kept deliberately below normal reading contrast. */
-:is(#perfil, #profile)::after,
-#areas::after,
-:is(#experiencia, #experience)::after,
-:is(#proyectos, #projects)::after,
-#stack::after,
-:is(#contacto, #contact)::after {
+body.is-personalized :is(#perfil, #profile)::after,
+body.is-personalized #areas::after,
+body.is-personalized :is(#experiencia, #experience)::after,
+body.is-personalized :is(#proyectos, #projects)::after,
+body.is-personalized #stack::after,
+body.is-personalized :is(#contacto, #contact)::after {
   position: absolute;
   z-index: -1;
   pointer-events: none;
@@ -149,37 +149,37 @@ main > section::before {
   opacity: .72;
 }
 
-:is(#perfil, #profile)::after {
+body.is-personalized :is(#perfil, #profile)::after {
   content: "01";
   top: 10%;
   right: clamp(-1rem, 1vw, 1rem);
 }
 
-#areas::after {
+body.is-personalized #areas::after {
   content: "02";
   top: 14%;
   left: clamp(-1rem, 1vw, 1rem);
 }
 
-:is(#experiencia, #experience)::after {
+body.is-personalized :is(#experiencia, #experience)::after {
   content: "03";
   top: 8%;
   right: 0;
 }
 
-:is(#proyectos, #projects)::after {
+body.is-personalized :is(#proyectos, #projects)::after {
   content: "04";
   top: 9%;
   left: 0;
 }
 
-#stack::after {
+body.is-personalized #stack::after {
   content: "05";
   top: 8%;
   right: 0;
 }
 
-:is(#contacto, #contact)::after {
+body.is-personalized :is(#contacto, #contact)::after {
   content: "06";
   top: 4%;
   left: 0;
@@ -207,7 +207,7 @@ main > section::before {
     background-size: 54vw 100%, 768px 768px;
   }
 
-  main > section::before {
+  body.is-personalized main > section::before {
     top: -3%;
     bottom: -3%;
     opacity: .46;
@@ -215,12 +215,12 @@ main > section::before {
     background-attachment: scroll, scroll;
   }
 
-  :is(#perfil, #profile)::after,
-  #areas::after,
-  :is(#experiencia, #experience)::after,
-  :is(#proyectos, #projects)::after,
-  #stack::after,
-  :is(#contacto, #contact)::after {
+  body.is-personalized :is(#perfil, #profile)::after,
+  body.is-personalized #areas::after,
+  body.is-personalized :is(#experiencia, #experience)::after,
+  body.is-personalized :is(#proyectos, #projects)::after,
+  body.is-personalized #stack::after,
+  body.is-personalized :is(#contacto, #contact)::after {
     font-size: clamp(6rem, 24vw, 10rem);
     opacity: .50;
   }
@@ -228,23 +228,23 @@ main > section::before {
 
 @media (max-width: 620px) {
   /* Mobile gets fewer simultaneous signals rather than a scaled-down desktop map. */
-  #areas::before,
-  #stack::before {
+  body.is-personalized #areas::before,
+  body.is-personalized #stack::before {
     display: none;
   }
 
-  main > section::before {
+  body.is-personalized main > section::before {
     width: 112vw;
     background-size: 34rem 34rem, 900px auto;
     opacity: .38;
   }
 
-  :is(#perfil, #profile)::after,
-  #areas::after,
-  :is(#experiencia, #experience)::after,
-  :is(#proyectos, #projects)::after,
-  #stack::after,
-  :is(#contacto, #contact)::after {
+  body.is-personalized :is(#perfil, #profile)::after,
+  body.is-personalized #areas::after,
+  body.is-personalized :is(#experiencia, #experience)::after,
+  body.is-personalized :is(#proyectos, #projects)::after,
+  body.is-personalized #stack::after,
+  body.is-personalized :is(#contacto, #contact)::after {
     font-size: clamp(5.4rem, 28vw, 8rem);
     -webkit-text-stroke-color: rgba(241,237,228,.055);
     opacity: .42;
@@ -257,7 +257,7 @@ main > section::before {
     background-position: 72% 0, 0 0;
   }
 
-  main > section::before {
+  body.is-personalized main > section::before {
     background-attachment: scroll, scroll;
   }
 }

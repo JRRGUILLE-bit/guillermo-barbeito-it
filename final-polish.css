@@ -91,8 +91,7 @@
 }
 
 /* 05 / HERO OPERATIONS WORKFLOW
-   Replace the generic satellite-node diagram with a disciplined vertical workflow.
-   Same semantic content, different information architecture. */
+   Replace the generic satellite-node diagram with a disciplined vertical workflow. */
 .is-personalized .hero-system {
   min-height: 590px;
   background:
@@ -119,9 +118,9 @@
 .is-personalized .system-map {
   position: relative;
   min-height: 500px;
-  padding: 3.1rem clamp(1.6rem, 4vw, 3.25rem) 8.3rem;
+  padding: 3.1rem clamp(1.6rem, 4vw, 3.25rem) 1.5rem;
   display: grid;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(78px, 1fr)) auto;
   gap: 0;
 }
 
@@ -166,6 +165,10 @@
 .is-personalized .system-map .node span {
   grid-row: 1 / 3;
   align-self: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent !important;
   color: rgba(112,216,189,.72);
   font-size: .66rem;
   letter-spacing: .12em;
@@ -214,49 +217,33 @@
   opacity: 1;
 }
 
-.is-personalized .system-map .node-b span,
-.is-personalized .system-map .node-b::before {
-  color: var(--blue);
-  background: var(--blue);
-}
+.is-personalized .system-map .node-b span { color: var(--blue); }
+.is-personalized .system-map .node-b::before { background: var(--blue); box-shadow: 0 0 10px rgba(109,168,216,.34); }
+.is-personalized .system-map .node-b::after { background: rgba(109,168,216,.3); }
 
-.is-personalized .system-map .node-b::after {
-  background: rgba(109,168,216,.3);
-}
+.is-personalized .system-map .node-c span { color: rgba(241,237,228,.66); }
+.is-personalized .system-map .node-c::before { background: rgba(241,237,228,.62); box-shadow: none; }
+.is-personalized .system-map .node-c::after { background: rgba(241,237,228,.22); }
 
-.is-personalized .system-map .node-c span,
-.is-personalized .system-map .node-c::before {
-  color: rgba(241,237,228,.66);
-  background: rgba(241,237,228,.62);
-}
-
-.is-personalized .system-map .node-c::after {
-  background: rgba(241,237,228,.22);
-}
-
-.is-personalized .system-map .node-d span,
-.is-personalized .system-map .node-d::before {
-  color: var(--accent-bright);
-  background: var(--accent-bright);
-}
-
-.is-personalized .system-map .node-d::after {
-  background: rgba(218,59,50,.3);
-}
+.is-personalized .system-map .node-d span { color: var(--accent-bright); }
+.is-personalized .system-map .node-d::before { background: var(--accent-bright); box-shadow: 0 0 10px rgba(218,59,50,.28); }
+.is-personalized .system-map .node-d::after { background: rgba(218,59,50,.3); }
 
 .is-personalized .system-map .core {
-  position: absolute;
-  left: clamp(1.6rem, 4vw, 3.25rem);
-  right: clamp(1.6rem, 4vw, 3.25rem);
-  bottom: 1.45rem;
-  top: auto;
-  width: auto;
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
   min-height: 5.4rem;
+  aspect-ratio: auto;
   transform: none;
   display: grid;
   grid-template-columns: 4.5rem 1fr;
+  place-items: initial;
+  align-content: normal;
   align-items: center;
   gap: 1.2rem;
+  margin-top: 1rem;
   padding: 1rem 1.15rem;
   border: 1px solid rgba(112,216,189,.22);
   background:
@@ -288,6 +275,7 @@
   font-size: .56rem;
   line-height: 1.55;
   letter-spacing: .11em;
+  text-align: left;
 }
 
 .is-personalized .system-foot {
@@ -305,7 +293,8 @@
 
   .is-personalized .system-map {
     min-height: 455px;
-    padding-inline: 1.15rem;
+    padding: 3rem 1.15rem 1.15rem;
+    grid-template-rows: repeat(4, minmax(68px, 1fr)) auto;
   }
 
   .is-personalized .system-map::before {
@@ -335,8 +324,6 @@
   }
 
   .is-personalized .system-map .core {
-    left: 1.15rem;
-    right: 1.15rem;
     grid-template-columns: 3.65rem 1fr;
     gap: .85rem;
     padding: .85rem;

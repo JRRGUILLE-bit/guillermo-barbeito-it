@@ -148,3 +148,37 @@
     opacity: .82;
   }
 }
+
+/* STEP 05 — Let spacing and tonal hierarchy replace excess boxes. */
+.is-personalized .area-card,
+.is-personalized .project-card {
+  border: 0;
+  border-top: 1px solid rgba(241,237,228,.12);
+  background: linear-gradient(180deg, rgba(18,22,28,.42), rgba(11,13,16,.18));
+}
+
+.is-personalized .area-card:hover,
+.is-personalized .project-card:hover {
+  border-color: rgba(241,237,228,.22);
+  background: linear-gradient(180deg, rgba(22,27,34,.55), rgba(11,13,16,.24));
+}
+
+.is-personalized .credential-card,
+.is-personalized .language-card {
+  border: 0;
+  border-top: 1px solid rgba(241,237,228,.11);
+  background: linear-gradient(180deg, rgba(18,22,28,.42), rgba(11,13,16,.12));
+}
+
+.is-personalized .training-list span,
+.is-personalized .credential-year {
+  border-color: rgba(241,237,228,.12);
+}
+
+.is-personalized .profile-photo-card {
+  border-color: rgba(241,237,228,.18);
+}
+
+.is-personalized .project-feature {
+  border-color: rgba(241,237,228,.18);
+}

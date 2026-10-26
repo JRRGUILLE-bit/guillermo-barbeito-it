@@ -6,8 +6,8 @@ Perfil técnico público de Guillermo Barbeito, Ingeniero en Informática en Mon
 
 - **Portfolio ES:** https://jrrguille-bit.github.io/guillermo-barbeito-it/
 - **Portfolio EN:** https://jrrguille-bit.github.io/guillermo-barbeito-it/en/
-- **CV técnico ES:** https://jrrguille-bit.github.io/guillermo-barbeito-it/Guillermo_Barbeito_CV_IT_2026.pdf
-- **CV técnico EN:** https://jrrguille-bit.github.io/guillermo-barbeito-it/Guillermo_Barbeito_CV_IT_2026_EN.pdf
+- **CV técnico ES:** https://jrrguille-bit.github.io/guillermo-barbeito-it/CV%20Guillermo%20Barbeito.pdf
+- **CV técnico EN:** https://jrrguille-bit.github.io/guillermo-barbeito-it/CV%20Guillermo%20Barbeito%20%28English%29.pdf
 - **LinkedIn:** https://www.linkedin.com/in/guillermo-barbeito-040632340/
 
 ## Perfil profesional
@@ -71,8 +71,8 @@ Base de operaciones que integró clima, movilidad, documentos y herramientas. El
 
 - `index.html` — versión principal en español, metadata social, SEO y datos estructurados.
 - `en/index.html` — versión inglesa para búsquedas y postulaciones internacionales.
-- `Guillermo_Barbeito_CV_IT_2026.pdf` — CV técnico en español.
-- `Guillermo_Barbeito_CV_IT_2026_EN.pdf` — resume técnico en inglés.
+- `CV Guillermo Barbeito.pdf` — CV técnico en español.
+- `CV Guillermo Barbeito (English).pdf` — resume técnico en inglés.
 - `projects/` y `en/projects/` — casos de estudio bilingües.
 - `styles.css`, `personalization.css`, `job-search.css` y `case-study.css` — diseño responsive compartido.
 - `script.js` — navegación móvil, aparición progresiva y sección activa.

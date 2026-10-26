@@ -5,7 +5,7 @@ Public technical profile of Guillermo Barbeito, a Computer Engineer based in Mon
 [Versión en español](README.md)
 
 - **Portfolio:** https://jrrguille-bit.github.io/guillermo-barbeito-it/en/
-- **Technical resume:** https://jrrguille-bit.github.io/guillermo-barbeito-it/Guillermo_Barbeito_CV_IT_2026_EN.pdf
+- **Technical resume:** https://jrrguille-bit.github.io/guillermo-barbeito-it/CV%20Guillermo%20Barbeito%20%28English%29.pdf
 - **LinkedIn:** https://www.linkedin.com/in/guillermo-barbeito-040632340/
 - **GitHub:** https://github.com/JRRGUILLE-bit
 
@@ -70,8 +70,8 @@ Operations hub that integrated weather, mobility, documents and tools. Its weath
 
 - `index.html` — main Spanish version with social metadata, SEO and structured data.
 - `en/index.html` — English version for international searches and applications.
-- `Guillermo_Barbeito_CV_IT_2026.pdf` — Spanish technical CV.
-- `Guillermo_Barbeito_CV_IT_2026_EN.pdf` — English technical resume.
+- `CV Guillermo Barbeito.pdf` — Spanish technical CV.
+- `CV Guillermo Barbeito (English).pdf` — English technical resume.
 - `projects/` and `en/projects/` — bilingual case studies.
 - `styles.css`, `personalization.css`, `job-search.css` and `case-study.css` — shared responsive design.
 - `script.js` — mobile navigation, progressive reveal and active-section tracking.

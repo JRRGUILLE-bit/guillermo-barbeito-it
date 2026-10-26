@@ -1422,3 +1422,45 @@
     letter-spacing: .045em;
   }
 }
+
+
+/* Independent IT services and outsourced client assignments. */
+.independent-role {
+  background: linear-gradient(90deg, rgba(112,216,189,.055), rgba(112,216,189,.012) 70%, transparent);
+  box-shadow: inset 2px 0 0 rgba(112,216,189,.42);
+  padding-inline: 1rem;
+}
+.independent-role .experience-date,
+.independent-role .experience-company span {
+  color: var(--signal);
+}
+.assignment-caption {
+  margin: .95rem 0 .55rem !important;
+  color: var(--ink) !important;
+  font: 700 .64rem/1.45 var(--mono);
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+.assignment-clients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .65rem;
+}
+.assignment-clients span {
+  display: inline-flex;
+  align-items: center;
+  padding: .43rem .58rem .37rem;
+  border: 1px solid rgba(112,216,189,.26);
+  background: rgba(112,216,189,.045);
+  color: var(--ink);
+  font: 700 .68rem/1.2 var(--mono);
+  letter-spacing: .025em;
+}
+@media (max-width: 680px) {
+  .independent-role {
+    padding-inline: .75rem;
+    margin-inline: 0;
+  }
+  .assignment-caption { line-height: 1.5; }
+}

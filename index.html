@@ -458,5 +458,13 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    window.goatcounter = {
+      path: function () {
+        return '/it' + (window.location.pathname || '/') + window.location.search;
+      }
+    };
+  </script>
+  <script data-goatcounter="https://jrrguille.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

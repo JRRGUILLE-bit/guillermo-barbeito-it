@@ -459,8 +459,8 @@
   <script src="../script.js"></script>
   <script>
     window.goatcounter = {
-      path: function () {
-        return '/it' + (window.location.pathname || '/') + window.location.search;
+      path: function (p) {
+        return '/it' + p;
       }
     };
   </script>

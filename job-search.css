@@ -1516,3 +1516,35 @@
     padding: 0.55rem 0.75rem;
   }
 }
+
+
+/* Prevent the long contact heading and grid from clipping on narrow English layouts. */
+@media (max-width: 620px) {
+  .is-personalized .contact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .is-personalized .contact > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .is-personalized .contact-line {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(4rem, 5rem) minmax(0, 1fr) auto;
+    gap: 0.65rem;
+  }
+
+  .is-personalized .contact-line strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .is-personalized .contact h2 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 11vw, 2.8rem);
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+  }
+}

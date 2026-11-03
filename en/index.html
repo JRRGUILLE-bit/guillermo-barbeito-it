@@ -458,12 +458,13 @@
 
   <script src="../script.js"></script>
   <script>
-    window.goatcounter = {
-      path: function () {
-        return '/it' + (window.location.pathname || '/') + window.location.search;
-      }
-    };
+    window.goatcounter = { no_onload: true };
   </script>
-  <script data-goatcounter="https://jrrguille.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script
+    data-goatcounter="https://jrrguille.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js"
+    onload="window.goatcounter.count({path: '/it' + (window.location.pathname || '/') + window.location.search}); window.goatcounter.bind_events();"
+  ></script>
 </body>
 </html>

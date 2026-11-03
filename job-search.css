@@ -1464,3 +1464,55 @@
   }
   .assignment-caption { line-height: 1.5; }
 }
+
+
+/* Mobile QA corrections: keep the identity heading and touch controls inside the phone viewport. */
+@media (max-width: 620px) {
+  .is-personalized .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.9rem, 14vw, 3.4rem);
+    line-height: 0.9;
+  }
+
+  .site-header .brand {
+    min-height: 44px;
+  }
+
+  .site-header .brand-mark {
+    display: inline-grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  .site-header .nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .is-personalized .button {
+    min-height: 44px;
+  }
+
+  .is-personalized .hero-project-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .is-personalized .text-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 0.55rem;
+  }
+
+  .site-footer .footer-language {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.55rem 0.75rem;
+  }
+}
